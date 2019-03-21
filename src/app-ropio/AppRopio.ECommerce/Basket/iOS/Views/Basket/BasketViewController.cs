@@ -1,4 +1,3 @@
-
 using System.Linq;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Converters;
@@ -25,6 +24,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
         public BasketViewController()
             : base("BasketViewController", null)
         {
+
         }
 
         #region CommonViewController implementation
@@ -35,11 +35,17 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 
             RegisterKeyboardActions = true;
 
-
             SetupTableView(_tableView);
             SetupNextButton(_nextButton);
             SetupEmptyView(_emptyView, _emptyImage, _emptyTitle, _epmtyText, _goToButton);
             SetupBottomView(_bottomView);
+
+            bool needDiscount = false;
+            if (needDiscount)
+                ShowDiscount();
+            else
+                HideDiscount();
+
             ResolveAndSetupLoyalty(_loyaltyWrapper);
         }
 
@@ -65,6 +71,45 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 
         #endregion
 
+        #region Discount
+
+        private void ShowDiscount()
+        {
+            HideLargeDisplayMode();
+            InitializeTextView();
+            InitialieDiscountView();
+        }
+
+        private void InitializeTextView()
+        {
+            _discountTextView.Text = "Скидка 3% при заказе от 499 рублей\nСкидка 3% при заказе самовывозом\nСкидка 12% при заказе самовывоза с центрального склада\nСкидка 12% при заказе самовывоза с центрального склада\nСкидка 12% при заказе самовывоза с центрального склада";
+            _discountTextView.SizeToFit();
+            _discountTextView.ScrollEnabled = false;
+            _discountTextHeightConstraint.Constant = _discountTextView.Frame.Height;
+            _discountTextView.TextColor = UIColor.Black;
+        }
+
+        private void InitialieDiscountView()
+        {
+            // Top space for _discountView
+            var topSpace = NavigationController.NavigationBar.Frame.Y + NavigationController.NavigationBar.Frame.Height;
+            _discountViewHeightConstraint.Constant = _discountTextView.Frame.Height + topSpace + 20;
+        }
+
+        private void HideLargeDisplayMode()
+        {
+            AutomaticallyLargeTitleDisplayMode = false;
+            NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
+        }
+
+        void HideDiscount()
+        {
+            _discountViewHeightConstraint.Constant = 0;
+            _discountTextView.Hidden = true;
+        }
+
+        #endregion
+
         #region InitializationControls
 
         protected virtual void SetupBottomView(UIView view)
@@ -84,10 +129,10 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
         protected virtual void SetupNextButton(UIButton nextButton)
         {
             nextButton.SetupStyle(BasketTheme.NextButton);
-		}
+        }
 
-		protected virtual void SetupEmptyView(UIView emptyView, UIImageView emptyImage, UILabel emptyTitle, UILabel emptyText, UIButton goToButton)
-		{
+        protected virtual void SetupEmptyView(UIView emptyView, UIImageView emptyImage, UILabel emptyTitle, UILabel emptyText, UIButton goToButton)
+        {
             emptyView.Hidden = true;
             emptyView.BackgroundColor = BasketTheme.EmptyView.Background.ToUIColor();
 
@@ -100,7 +145,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
             emptyTitle.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_EmptyTitle");
             emptyText.Text = LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_EmptyText");
             goToButton.WithTitleForAllStates(LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_EmptyButton"));
-		}
+        }
 
         protected virtual void ResolveAndSetupLoyalty(UIView loyaltyWrapper)
         {
@@ -146,14 +191,16 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
                .For("Title")
                .To(vm => vm.Amount)
                .WithConversion(
-                   "StringFormat", 
-                   new StringFormatParameter { StringFormat = (arg) => 
-                {
-                    var str = $"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {((decimal)arg).ToString(AppSettings.CurrencyFormat, AppSettings.SettingsCulture.NumberFormat)}";
-                    return BasketTheme.NextButton.UppercaseTitle ? str.ToUpperInvariant() : str;
-                } 
-            });
-            
+                   "StringFormat",
+                   new StringFormatParameter
+                   {
+                       StringFormat = (arg) =>
+{
+    var str = $"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {((decimal)arg).ToString(AppSettings.CurrencyFormat, AppSettings.SettingsCulture.NumberFormat)}";
+    return BasketTheme.NextButton.UppercaseTitle ? str.ToUpperInvariant() : str;
+}
+                   });
+
             set.Bind(nextButton).To(vm => vm.NextCommand);
             set.Bind(nextButton).For(s => s.Enabled).To(vm => vm.CanGoNext);
 
@@ -165,8 +212,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
             set.Bind(bottomView).For("Visibility").To(vm => vm.Items.Count).WithConversion("Visibility");
         }
 
-		protected virtual void BindEmptyView(UIView emptyView, UIButton goToButton, MvxFluentBindingDescriptionSet<BasketViewController, IBasketViewModel> set)
-		{
+        protected virtual void BindEmptyView(UIView emptyView, UIButton goToButton, MvxFluentBindingDescriptionSet<BasketViewController, IBasketViewModel> set)
+        {
             set.Bind(emptyView).For("Visibility").To(vm => vm.IsEmpty).WithConversion("Visibility");
             set.Bind(goToButton).To(vm => vm.CatalogCommand);
         }
