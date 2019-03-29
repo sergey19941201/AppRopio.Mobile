@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Converters;
@@ -39,14 +40,9 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
             SetupNextButton(_nextButton);
             SetupEmptyView(_emptyView, _emptyImage, _emptyTitle, _epmtyText, _goToButton);
             SetupBottomView(_bottomView);
-            //_tableView.Hidden = true;
-            HideLargeDisplayMode();
-            //TODO pin stacklayout to navbar
-            _StackTopConstraint.Constant = this.NavigationController.NavigationBar.Frame.Size.Height+UIApplication.SharedApplication.StatusBarFrame.Size.Height;
-
-            //_messageView.Hidden = true;
-            ResolveAndSetupLoyalty(_loyaltyWrapper);
         }
+
+
 
         protected override void BindControls()
         {
@@ -56,7 +52,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
             BindNextButton(_nextButton, set);
             BindEmptyView(_emptyView, _goToButton, set);
             BindBottomView(_bottomView, set);
-            //BindMessageTextView(_messageTextView, set);
+            BindMessage(_messageLabel, _messageView, set);
 
             if (_loyaltyWrapper.Subviews.Any())
                 BindLoyaltyWrapper(_loyaltyWrapper, set);
@@ -73,40 +69,11 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 
         #region Discount
 
-        private void ShowMessage()
-        {
-            HideLargeDisplayMode();
-            //InitializeTextView();
-            //InitialieDiscountView();
-        }
-
-        //private void InitializeTextView()
-        //{
-        //    //_messageTextView.Text = "Скидка 3% при заказе от 499 рублей\nСкидка 3% при заказе самовывозом\nСкидка 12% при заказе самовывоза с центрального склада\nСкидка 12% при заказе самовывоза с центрального склада\nСкидка 12% при заказе самовывоза с центрального склада";
-        //    _messageTextView.SizeToFit();
-        //    _messageTextView.ScrollEnabled = false;
-        //    _messageViewHeightConstraint.Constant = _messageTextView.Frame.Height;
-        //    _messageTextView.TextColor = UIColor.Black;
-        //}
-
-        //private void InitialieDiscountView()
-        //{
-        //    // Top space for _discountView
-        //    var topSpace = NavigationController.NavigationBar.Frame.Y + NavigationController.NavigationBar.Frame.Height;
-        //    _messageViewHeightConstraint.Constant = _messageTextView.Frame.Height + topSpace;// + 20;
-        //}
-
         private void HideLargeDisplayMode()
         {
             AutomaticallyLargeTitleDisplayMode = false;
             NavigationItem.LargeTitleDisplayMode = UINavigationItemLargeTitleDisplayMode.Never;
         }
-
-        //void HideMessage()
-        //{
-        //    _messageViewHeightConstraint.Constant = 0;
-        //    _messageTextView.Hidden = true;
-        //}
 
         #endregion
 
@@ -185,39 +152,13 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
             tableView.ReloadData();
         }
 
-        void lflfl()
+        private void BindMessage(UILabel label, UIView view, MvxFluentBindingDescriptionSet<BasketViewController, IBasketViewModel> set)
         {
-
-        }
-
-        protected virtual void BindMessageTextView(UITextView messageTextView, MvxFluentBindingDescriptionSet<BasketViewController, IBasketViewModel> set)
-        {
-            set.Bind(messageTextView).For("Text").To(vm => vm.Message);
-
-            //if (!string.IsNullOrEmpty(messageTextView.Text))
-            //    ShowMessage();
-            //else
-                //HideMessage();
-
-            //set.Bind(messageTextView).For("Text")
-            //.To(vm => vm.Amount)
-            //.WithConversion(
-            //"StringFormat",
-            //new StringFormatParameter
-            //{
-            //    StringFormat = (arg) =>
-            //    {
-            //        var str = $"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {((decimal)arg).ToString(AppSettings.CurrencyFormat, AppSettings.SettingsCulture.NumberFormat)}";
-            //        return BasketTheme.NextButton.UppercaseTitle ? str.ToUpperInvariant() : str;
-            //    }
-            //});
-
-            // messageTextView.Text = ViewModel.Amount.ToString();
-            //var lggkk = ViewModel.Message;
-            //_messageTextView.Text = messageTextView.Text;
-            //messageTextView.Text = "lol";
-            //bool needMessage = true;
-
+            HideLargeDisplayMode();
+            _StackTopConstraint.Constant = this.NavigationController.NavigationBar.Frame.Size.Height + UIApplication.SharedApplication.StatusBarFrame.Size.Height;
+            set.Bind(label).For(v => v.Text).To(vm => vm.Message);
+            set.Bind(view).For("Visibility").To(vm => vm.Message).WithConversion("Visibility");
+            ResolveAndSetupLoyalty(_loyaltyWrapper);
         }
 
         protected virtual void BindNextButton(UIButton nextButton, MvxFluentBindingDescriptionSet<BasketViewController, IBasketViewModel> set)
