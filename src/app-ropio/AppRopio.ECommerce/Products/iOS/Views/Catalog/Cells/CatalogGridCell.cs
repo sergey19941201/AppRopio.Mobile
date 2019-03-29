@@ -72,6 +72,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             SetupMarkButton(MarkButton, cell.MarkButton);
 
             SetupBasketView();
+            //cell.Background = new Color() { Hex = "#000000" };
 
             this.SetupStyle(cell);
         }
@@ -105,11 +106,46 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
         {
             if (badges == null)
                 return;
-            
-            (badges.CollectionViewLayout as UICollectionViewFlowLayout).ItemSize = new CoreGraphics.CGSize(BadgeCell.WIDTH, BadgeCell.HEIGHT);
 
-            if (BadgesWidthConstraint != null)
-                BadgesWidthConstraint.Constant = (BadgeCell.WIDTH * 2f).If_iPhone6(BadgeCell.WIDTH * 3f).If_iPhone6Plus(BadgeCell.WIDTH * 3f);
+            //(badges.CollectionViewLayout as UICollectionViewFlowLayout).
+
+            // TODO
+            //var subviewss = badges.Subviews;
+            ////var ffk = subviewss[0] is Label;
+            //var kfsfk = subviewss[0].TextInputContextIdentifier;
+            ////subviewss[0].ClipsToBounds = true;
+            //subviewss[0].SizeToFit();
+            //var kkkg = subviewss[0].Layer.Frame.Width;
+            //badges.RegisterNibForCell(BadgeCell.Nib, BadgeCell.Key);
+            (badges.CollectionViewLayout as UICollectionViewFlowLayout).ItemSize = new CoreGraphics.CGSize(/*BadgeCell.WIDTH*/Bounds.Width - badges.Frame.X * 2, BadgeCell.HEIGHT);
+            //var width = UIScreen.MainScreen.Bounds.Size.Width;
+            //(badges.CollectionViewLayout as UICollectionViewFlowLayout).EstimatedItemSize = new CoreGraphics.CGSize(10, 10);
+            //var height2 = ContentView.WidthAnchor.ConstraintEqualTo(Bounds.Size.Width);
+            //height2.Active = true;
+            //UICollectionView
+            //var cell = badges.CellForItem(indexPath);
+            //cell.Layer.
+            //new UICollectionViewFlowLayout().
+            //(badges.CollectionViewLayout as UICollectionViewFlowLayout)
+            //(badges.CollectionViewLayout as UICollectionViewFlowLayout).att;
+
+            //ContentView.TranslatesAutoresizingMaskIntoConstraints = true;
+            //new UICollectionViewCell().RemoveObserver]]
+            //UICollectionView.au
+            //var ffkkkfk = new UICollectionViewFlowLayout
+
+            //var gglgkkg= new NSAttributedString("llflldfll");
+            //var kggjgj = gglgkkg.Size;
+            //var lg = badges.ContentSize.Width;
+            //var kfkfk = subviewss[0].Frame.Width;
+
+            //RemoveConstraint(BadgesWidthConstraint);
+            //RemoveConstraint(_badgesWidthContraint);
+            if (BadgesWidthConstraint != null)// TODO
+                BadgesWidthConstraint.Constant = Bounds.Width - badges.Frame.X * 2;//(BadgeCell.WIDTH * 2f).If_iPhone6(BadgeCell.WIDTH * 3f).If_iPhone6Plus(BadgeCell.WIDTH * 3f);
+
+            //var lgkg = BadgeCell.Nib;
+
 
             badges.RegisterNibForCell(BadgeCell.Nib, BadgeCell.Key);
         }
@@ -170,7 +206,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
         protected virtual void BindName(UILabel name, MvxFluentBindingDescriptionSet<CatalogGridCell, ICatalogItemVM> set)
         {
-            if (name == null) 
+            if (name == null)
                 return;
 
             set.Bind(name).To(vm => vm.Name);
@@ -183,11 +219,12 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
             MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
             if (Config.UnitNameEnabled)
-                priceBinding = set.Bind(price).ByCombining(new PriceFromUnitCombiner(), new []{ "Price", "UnitName", "MaxPrice" });
+                priceBinding = set.Bind(price).ByCombining(new PriceFromUnitCombiner(), new[] { "Price", "UnitName", "MaxPrice" });
             else
-                priceBinding = set.Bind(price).ByCombining(new PriceFromFormatCombiner(), new []{ "Price", "MaxPrice" });
+                priceBinding = set.Bind(price).ByCombining(new PriceFromFormatCombiner(), new[] { "Price", "MaxPrice" });
 
-            if (Config.PriceType != PriceType.FromTo) {
+            if (Config.PriceType != PriceType.FromTo)
+            {
                 set.Bind(price)
                     .For("Visibility")
                     .ByCombining(new PriceVisibilityValueCombiner(), new[] { "Price", "MaxPrice" })
@@ -200,22 +237,26 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             if (maxPrice == null)
                 return;
 
-            if (!(Config.PriceType == PriceType.To || Config.PriceType == PriceType.FromTo)) {
+            if (!(Config.PriceType == PriceType.To || Config.PriceType == PriceType.FromTo))
+            {
                 maxPrice.Hidden = true;
                 return;
             }
 
             MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
             if (Config.UnitNameEnabled)
-                priceBinding = set.Bind(maxPrice).ByCombining(new PriceUnitCombiner(), new []{ "MaxPrice", "UnitName" });
+                priceBinding = set.Bind(maxPrice).ByCombining(new PriceUnitCombiner(), new[] { "MaxPrice", "UnitName" });
             else
                 priceBinding = set.Bind(maxPrice).To(vm => vm.MaxPrice);
 
             priceBinding.WithConversion(
                 "StringFormat",
-                new StringFormatParameter() {
-                    StringFormat = (arg) => {
-                        if (!Config.UnitNameEnabled) {
+                new StringFormatParameter()
+                {
+                    StringFormat = (arg) =>
+                    {
+                        if (!Config.UnitNameEnabled)
+                        {
                             arg = new PriceFormatConverter().Convert(arg, typeof(Decimal?), null, null);
                         }
                         return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceTo")} {arg}";
@@ -233,19 +274,22 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
             MvxFluentBindingDescription<UILabel, ICatalogItemVM> priceBinding;
             if (Config.UnitNameEnabled)
-                priceBinding = set.Bind(oldPrice).ByCombining(new PriceUnitCombiner(), new []{ "OldPrice", "UnitNameOld" });
+                priceBinding = set.Bind(oldPrice).ByCombining(new PriceUnitCombiner(), new[] { "OldPrice", "UnitNameOld" });
             else
                 priceBinding = set.Bind(oldPrice).To(vm => vm.OldPrice);
 
             priceBinding.WithConversion(
                 "StringFormat",
-                new StringFormatParameter() {
-                    StringFormat = (arg) => {
-                        if (!Config.UnitNameEnabled) {
+                new StringFormatParameter()
+                {
+                    StringFormat = (arg) =>
+                    {
+                        if (!Config.UnitNameEnabled)
+                        {
                             arg = new PriceFormatConverter().Convert(arg, typeof(Decimal?), null, null);
                         }
                         return $"{arg}";
-//                        return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceFrom")} {arg}";
+                        //                        return $"{LocalizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceFrom")} {arg}";
                     }
                 }
             );
@@ -260,7 +304,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
         {
             if (badges == null)
                 return;
-            
+
             var dataSource = SetupBadgesViewSource(badges);
             badges.Source = dataSource;
 
@@ -278,7 +322,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
         {
             if (markButton == null)
                 return;
-            
+
             set.Bind(markButton).To(vm => vm.MarkCommand);
             set.Bind(markButton).For(v => v.Selected).To(vm => vm.Marked);
             set.Bind(markButton).For("Visibility").To(vm => vm.MarkEnabled).WithConversion("Visibility");

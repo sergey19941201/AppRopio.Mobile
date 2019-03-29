@@ -1,15 +1,17 @@
 ﻿// WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
+// This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
 using Foundation;
+using System;
+using System.CodeDom.Compiler;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.ProductCard
 {
-	[Register("BasketProductCardView")]
-	partial class BasketProductCardView
+    [Register ("BasketProductCardView")]
+    partial class BasketProductCardView
     {
         [Outlet]
         UIKit.UIButton _buyButton { get; set; }
@@ -26,36 +28,32 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.ProductCard
         [Outlet]
         UIKit.UIView _stepperView { get; set; }
 
-		void ReleaseDesignerOutlets()
-		{
-            if (_buyButton != null)
-            {
-                _buyButton.Dispose();
+        void ReleaseDesignerOutlets ()
+        {
+            if (_buyButton != null) {
+                _buyButton.Dispose ();
                 _buyButton = null;
             }
-            if (_stepperView != null)
-            {
-                _stepperView.Dispose();
-                _stepperView = null;
-            }
 
-            if (_quantityTextField != null)
-            {
-                _quantityTextField.Dispose();
-                _quantityTextField = null;
-            }
-
-            if (_decrementBtn != null)
-            {
-                _decrementBtn.Dispose();
+            if (_decrementBtn != null) {
+                _decrementBtn.Dispose ();
                 _decrementBtn = null;
             }
 
-            if (_incrementBtn != null)
-            {
-                _incrementBtn.Dispose();
+            if (_incrementBtn != null) {
+                _incrementBtn.Dispose ();
                 _incrementBtn = null;
             }
-		}
-	}
+
+            if (_quantityTextField != null) {
+                _quantityTextField.Dispose ();
+                _quantityTextField = null;
+            }
+
+            if (_stepperView != null) {
+                _stepperView.Dispose ();
+                _stepperView = null;
+            }
+        }
+    }
 }

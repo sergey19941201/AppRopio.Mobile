@@ -129,6 +129,20 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
             }
         }
 
+        private string _message;
+        public string Message
+        {
+            get
+            {
+                return _message;
+            }
+            set
+            {
+                _message = value;
+                RaisePropertyChanged(() => Message);
+            }
+        }
+
         private bool _canGoNext;
         public bool CanGoNext
         {
@@ -202,7 +216,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
 
                 InvokeOnMainThread(() => Items.Remove(item));
                 await VmService.DeleteItem(id);
-                //RecalcAmount();
+
                 Messenger.Publish(new ProductQuantityChangedMessage(this));
 
                 CanGoNext = true;
@@ -224,11 +238,15 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
 
             VersionId = VmService.LoadedBasket?.VersionId;
 
+            Message = VmService.LoadedBasket?.Message;
+
             Items = await VmService.LoadItemsIfNeeded(VersionId);
 
             IsEmpty = Items.IsNullOrEmpty();
 
             VersionId = VmService.LoadedBasket?.VersionId;
+
+            Message = VmService.LoadedBasket?.Message;
 
             if (!IsEmpty)
             {
@@ -307,6 +325,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
 
             DeleteItem(item.ProductId);
         }
+
+       
 
         protected virtual async void RecalcAmount()
         {

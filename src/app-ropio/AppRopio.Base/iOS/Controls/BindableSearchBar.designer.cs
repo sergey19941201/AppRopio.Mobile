@@ -8,20 +8,13 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Cells
+namespace AppRopio.Base.iOS
 {
-    [Register ("OrderFieldAutocompleteCell")]
-    partial class OrderFieldAutocompleteCell
+    [Register ("BindableSearchBar")]
+    partial class BindableSearchBar
     {
-        [Outlet]
-        UIKit.UILabel _valueLabel { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (_valueLabel != null) {
-                _valueLabel.Dispose ();
-                _valueLabel = null;
-            }
         }
     }
 }

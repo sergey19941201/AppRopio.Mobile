@@ -26,8 +26,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
                     Badges = new List<ProductBadge>
                     {
-                        new ProductBadge() { Name = "sale", Color = "#45D1FF" },
-                        new ProductBadge() { Name = "sale", Color = "#FC224B" }
+                        new ProductBadge() { Name = "salesale", Color = "#45D1FF" },
+                        new ProductBadge() { Name = "salesale", Color = "#FC224B" }
                     },
                     OldPrice = 1000100,
                     Price = 2000200,
@@ -49,7 +49,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
                     Badges = new List<ProductBadge>
                     {
-                        new ProductBadge() { Name = "sale", Color = "#45D1FF" }
+                        new ProductBadge() { Name = "salesale", Color = "#45D1FF" }
                     },
                     Price = 2000100,
                     ImageUrls = new List<Image>
@@ -69,8 +69,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#45D1FF" },
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
@@ -92,7 +92,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
@@ -114,8 +114,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#45D1FF" },
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
@@ -136,7 +136,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
@@ -156,8 +156,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#45D1FF" },
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
@@ -178,7 +178,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
@@ -199,8 +199,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#45D1FF" },
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
@@ -222,7 +222,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
@@ -242,8 +242,8 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Рубашка «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#45D1FF" },
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#45D1FF" },
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,
@@ -265,7 +265,7 @@ namespace AppRopio.ECommerce.Marked.API.Services.Fakes
                     Name = IsRussianCulture ? "Платье «Камелот»" : "Product name",
 					Badges = new List<ProductBadge>
 					{
-						new ProductBadge() { Name = "sale", Color = "#FC224B" }
+						new ProductBadge() { Name = "salesale", Color = "#FC224B" }
 					},
 					OldPrice = 2000100,
 					Price = 2000100,

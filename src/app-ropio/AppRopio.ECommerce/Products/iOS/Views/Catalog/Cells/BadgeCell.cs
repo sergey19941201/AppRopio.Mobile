@@ -3,6 +3,7 @@ using AppRopio.Base.iOS;
 using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
+using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
@@ -17,7 +18,9 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
 
         public const float WIDTH = 50f;
         public const float HEIGHT = 24f;
-        
+        public static nfloat textWidth, textHeight;
+
+
         public static readonly NSString Key = new NSString("BadgeCell");
         public static readonly UINib Nib;
 
@@ -35,6 +38,16 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
             });
         }
 
+        public override UICollectionViewLayoutAttributes PreferredLayoutAttributesFittingAttributes(UICollectionViewLayoutAttributes layoutAttributes)
+        {
+            var autoLayoutAttributes = base.PreferredLayoutAttributesFittingAttributes(layoutAttributes);
+            var targetSize = new CGSize(width: layoutAttributes.Frame.Width, height: 0);
+            var autoLayoutSize = ContentView.SystemLayoutSizeFittingSize(targetSize, (float)UILayoutPriority.Required, (float)UILayoutPriority.DefaultLow);
+            var autoLayoutFrame = new CGRect(0, 0, textWidth, textHeight);
+            autoLayoutAttributes.Frame = autoLayoutFrame;
+            return autoLayoutAttributes;
+        }
+
         #region InitializationControls
 
         protected virtual void InitializeControls()
@@ -45,6 +58,17 @@ namespace AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells
         protected virtual void SetupBadge(UIView badgeView, UILabel badgeName)
         {
             badgeView.Layer.SetupStyle(ThemeConfig.Products.ProductCell.Badge.Layer);
+            // TODO
+            if (badgeName != null)
+            {
+                ;
+                //badgeView.ContentMode.
+                badgeView.ClipsToBounds = true;
+                badgeView.SizeToFit();
+                textWidth = badgeView.Frame.Width;//new NSAttributedString(/*badgeName.Text*/"salesale").Size.Width;
+                textHeight = new NSAttributedString(/*badgeName.Text*/"salesale").Size.Height;
+            }
+            badgeView.Layer.CornerRadius = 8;
             badgeName.SetupStyle(ThemeConfig.Products.ProductCell.Badge);
         }
 

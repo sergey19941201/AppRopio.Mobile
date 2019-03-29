@@ -28,7 +28,7 @@
             {
                 "name": "reviews",
                 "assembly": {
-                    "typeName": "AppRopio.Feedback.Core.ViewModels.Reviews.IReviewsViewModel",
+                    "typeName": "AppRopio.Feedback.Core.ViewModels.Reviews.IReviewsViewMod",
                     "assemblyName": "AppRopio.Feedback.Core"
                 }
             }

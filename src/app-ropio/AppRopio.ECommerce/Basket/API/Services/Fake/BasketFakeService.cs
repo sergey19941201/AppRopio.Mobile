@@ -27,7 +27,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                 new BasketItem
                 {
                     Id = "1",
-                    Name = IsRussianCulture ? "Угловой диван Камелот" : "Corner sofa Camelot",
+                    Name = IsRussianCulture ? "Угловой диван Камелот" : "Corner sofa Camelot________",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-tasty-macaroni-cookies-on-a-wooden-base-541322413.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-tasty-macaroni-cookies-on-a-wooden-base-541322413.jpg" },
@@ -38,12 +38,12 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     {
                         new ProductBadge
                         {
-                            Name = "new",
+                            Name = "newnew",
                             Color = "#39C3FF"
                         },
                         new ProductBadge
                         {
-                            Name = "sale",
+                            Name = "salesale",
                             Color = "#FC224B"
                         }
                     },
@@ -66,7 +66,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     {
                         new ProductBadge
                         {
-                            Name = "sale",
+                            Name = "salesale",
                             Color = "#FC224B"
                         }
                     },
@@ -88,12 +88,12 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     {
                         new ProductBadge
                         {
-                            Name = "new",
+                            Name = "newnew",
                             Color = "#39C3FF"
                         },
                         new ProductBadge
                         {
-                            Name = "sale",
+                            Name = "salesale",
                             Color = "#FC224B"
                         }
                     },
@@ -116,7 +116,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     {
                         new ProductBadge
                         {
-                            Name = "sale",
+                            Name = "salesale",
                             Color = "#FC224B"
                         }
                     },
@@ -125,9 +125,10 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     UnitStep = 1.0f
                 }
             },
-                Amount = 6000300,
+                Amount = 5300300,
                 Discount = 100,
-                VersionId = "42"
+                VersionId = "42",
+                Message = "ddlddl fpfplflfllf hgghhh hghhbg hggg лорем ипсум лорен тудум ипсум лорен тудум тудум лорем ипсум лорен тудум ипсум лорен тудум тудум лорем ипсум лорен тудум ипсум лорен тудум тудум лорем ипсум лорен тудум ипсум лорен тудум тудум лорем ипсум лорен тудум ипсум лорен тудум тудум лорем ипсум лорен тудум ипсум лорен тудум тудум лорем ипсум лорен тудум ипсум лорен тудум тудум лорем ипсум лорен тудум ипсум лорен тудум тудум2"
             };
         }
 
@@ -188,7 +189,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                     {
                         new ProductBadge
                         {
-                            Name = "sale",
+                            Name = "salesale",
                             Color = "#FC224B"
                         }
                     },

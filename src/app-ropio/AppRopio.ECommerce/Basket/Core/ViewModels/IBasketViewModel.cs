@@ -41,6 +41,11 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels
         decimal Amount { get; }
 
         /// <summary>
+        /// Сообщение по скидкам и тп
+        /// </summary>
+        string Message { get; }
+
+        /// <summary>
         /// Доступность перехода к оформлению заказа
         /// </summary>
         bool CanGoNext { get; }

@@ -33,7 +33,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.ShortInfo
             Nib = UINib.FromName("ShortInfoCell", NSBundle.MainBundle);
         }
 
-        protected ShortInfoCell(IntPtr handle) 
+        protected ShortInfoCell(IntPtr handle)
             : base(handle)
         {
             this.DelayBind(() =>
@@ -64,11 +64,12 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.ShortInfo
 
         protected virtual void SetupBadgesCollection(UICollectionView badges)
         {
-            (badges.CollectionViewLayout as UICollectionViewFlowLayout).ItemSize = new CoreGraphics.CGSize(BadgeCell.WIDTH, BadgeCell.HEIGHT);
+            //var gfgfg = Bounds.Width - badges.Frame.X * 2;
+            (badges.CollectionViewLayout as UICollectionViewFlowLayout).ItemSize = new CoreGraphics.CGSize(Bounds.Width / 3 * 2/*- badges.Frame.X+badges.Frame.Width*/, BadgeCell.HEIGHT);
 
             var viewModel = DataContext as IShortInfoProductsPciVm;
             if (viewModel != null)
-                _badgesWidthContraint.Constant = viewModel.Badges.IsNullOrEmpty() ? 0 : Math.Min(3f * BadgeCell.WIDTH, viewModel.Badges.Count * BadgeCell.WIDTH);
+                _badgesWidthContraint.Constant = Bounds.Width/5*4; //- badges.Frame.X * 2;//viewModel.Badges.IsNullOrEmpty() ? 0 : Math.Min(3f * BadgeCell.WIDTH, viewModel.Badges.Count * BadgeCell.WIDTH);
 
             badges.RegisterNibForCell(BadgeCell.Nib, BadgeCell.Key);
         }

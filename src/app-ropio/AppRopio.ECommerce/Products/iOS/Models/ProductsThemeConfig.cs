@@ -277,7 +277,7 @@ namespace AppRopio.ECommerce.Products.iOS.Models
             Badge = new Label
             {
                 TextColor = (Color)Theme.ColorPalette.TextBase.Clone(),
-                Font = Theme.FontsPalette.BoldOfSize(14)
+                Font = Theme.FontsPalette.BoldOfSize(14),
             };
 
             MarkButton = (Button)Theme.ControlPalette.Button.Icon.Clone();

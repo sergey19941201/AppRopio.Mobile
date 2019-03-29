@@ -1,6 +1,6 @@
 ﻿// WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
+// This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
@@ -11,7 +11,7 @@ using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Payment
 {
-    [Register("PaymentViewController")]
+    [Register ("PaymentViewController")]
     partial class PaymentViewController
     {
         [Outlet]
@@ -37,11 +37,6 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Payment
 
         void ReleaseDesignerOutlets ()
         {
-            if (_titleSeparator != null) {
-                _titleSeparator.Dispose ();
-                _titleSeparator = null;
-            }
-
             if (_cancelBtn != null) {
                 _cancelBtn.Dispose ();
                 _cancelBtn = null;
@@ -70,6 +65,11 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Payment
             if (_titleLabel != null) {
                 _titleLabel.Dispose ();
                 _titleLabel = null;
+            }
+
+            if (_titleSeparator != null) {
+                _titleSeparator.Dispose ();
+                _titleSeparator = null;
             }
         }
     }

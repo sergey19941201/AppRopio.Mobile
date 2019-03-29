@@ -73,5 +73,6 @@ namespace AppRopio.ECommerce.Basket.API.Services.Implementation
         {
             return await Get<BasketAmount>(BASKET_SUMMARY_AMOUNT, cancellationToken: token);
         }
+
     }
 }

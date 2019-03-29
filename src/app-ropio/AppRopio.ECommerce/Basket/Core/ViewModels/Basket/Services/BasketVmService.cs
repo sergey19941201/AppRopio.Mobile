@@ -166,7 +166,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services
             return isValid;
         }
 
-        public async Task<decimal> LoadBasketSummaryAmount()
+       
+
+    public async Task<decimal> LoadBasketSummaryAmount()
         {
             var amountResponse = new BasketAmount();
 

@@ -39,12 +39,12 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     {
                         new ProductBadge
                         {
-                            Name = "new",
+                            Name = "newnew",
                             Color = "#39C3FF"
                         },
                         new ProductBadge
                         {
-                            Name = "sale",
+                            Name = "salesale",
                             Color = "#FC224B"
                         }
                     },
@@ -56,7 +56,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                 new Product
                 {
                     Id = "2",
-                    Name = IsRussianCulture ? "Тар-тар из телятины с теплыми лисичками" : "Veal tartar with warm chanterelles",
+                    Name = IsRussianCulture ? "Тар-тар из телятины с теплыми лисичками" : "Veal tartar with warm chanterelles____",
                     ImageUrls = new List<Image>
                     {
                         new Image { SmallUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg", LargeUrl = "https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg" },
@@ -69,7 +69,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     {
                             new ProductBadge
                         {
-                            Name = "sale",
+                            Name = "salesale",
                             Color = "#FC224B"
                         }
                     },
@@ -185,7 +185,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     {
                         new ProductBadge
                         {
-                            Name = "sale",
+                            Name = "salesale",
                             Color = "#FC224B"
                         }
                     },
@@ -235,7 +235,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     {
                         new ProductBadge
                         {
-                            Name = "sale",
+                            Name = "salesale",
                             Color = "#FC224B"
                         }
                     },

@@ -8,20 +8,13 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace AppRopio.ECommerce.Basket.iOS.Views.Order.Cells
+namespace AppRopio.Base.iOS.Controls
 {
-    [Register ("OrderFieldAutocompleteCell")]
-    partial class OrderFieldAutocompleteCell
+    [Register ("ARTextField")]
+    partial class ARTextField
     {
-        [Outlet]
-        UIKit.UILabel _valueLabel { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (_valueLabel != null) {
-                _valueLabel.Dispose ();
-                _valueLabel = null;
-            }
         }
     }
 }
