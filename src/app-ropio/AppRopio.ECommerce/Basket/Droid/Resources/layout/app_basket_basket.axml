@@ -4,13 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/app_color_background">
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message_textView"
+        app:MvxBind="Text Message; Visibility Visibility(Message)"
+        android:textColor="#ff000000"
+        android:paddingStart="10dp"
+        android:paddingEnd="8.5dp"
+        android:paddingTop="8.5dp"
+        android:paddingBottom="8.5dp"
+        android:background="#10000000" />
     <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
         android:id="@+id/app_basket_basket_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/app_basket_basket_buttonLayout"
         app:MvxItemTemplate="@layout/app_basket_basket_item"
-        app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand; Visibility Visibility(Items.Count)" />
+        app:MvxBind="ItemsSource Items; ItemClick SelectionChangedCommand; Visibility Visibility(Items.Count)"
+        android:layout_below="@+id/message_textView" />
     <LinearLayout
         android:id="@+id/app_basket_basket_buttonLayout"
         android:orientation="vertical"
