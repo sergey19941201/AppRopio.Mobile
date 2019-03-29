@@ -35,19 +35,18 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qGD-tq-Dx3" userLabel="StackView" misplaced="YES" ambiguous="YES">
                     <rect key="frame" x="0.0" y="100" width="375" height="479"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZP-Pr-JI5" userLabel="MessageView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZP-Pr-JI5" userLabel="MessageView" misplaced="YES">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zr-xv-0Hq">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zr-xv-0Hq" misplaced="YES">
                                     <rect key="frame" x="10" y="10" width="355" height="183"/>
-                                    <color key="backgroundColor" red="1" green="0.069097354619999996" blue="0.15388710059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <string key="text">Label лаооваооаввоаов ваооваоавооа ваоваоавоаова оваоавоаов ваоваоваоавов варовравравар варрварваврв варваривиараврва варрваи лаллалаал ллллллл лллллл ллллл лллл     11111111 2222оваоавоаов ваоваоваоавов варовравравар варрварваврв варваривиараврва варрваи лаллалаал ллллллл лллллл ллллл лллл     11111111 2222</string>
+                                    <color key="backgroundColor" customColorSpace="sRGB" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.35809276505070919" green="1" blue="0.40618135507572506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" customColorSpace="displayP3" colorSpace="calibratedRGB" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1"/>
                             <constraints>
                                 <constraint firstItem="6zr-xv-0Hq" firstAttribute="leading" secondItem="vZP-Pr-JI5" secondAttribute="leading" constant="10" id="7Sa-6Q-0ek"/>
                                 <constraint firstAttribute="trailing" secondItem="6zr-xv-0Hq" secondAttribute="trailing" constant="10" id="JBj-Bv-ntS"/>
@@ -167,7 +166,7 @@
                 <constraint firstItem="PQk-3Y-qRr" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="MHw-91-QcK"/>
                 <constraint firstItem="PQk-3Y-qRr" firstAttribute="top" secondItem="qGD-tq-Dx3" secondAttribute="bottom" id="NGF-sV-Uh6"/>
                 <constraint firstAttribute="trailing" secondItem="qGD-tq-Dx3" secondAttribute="trailing" id="Qbe-4i-LuJ"/>
-                <constraint firstItem="qGD-tq-Dx3" firstAttribute="top" secondItem="2" secondAttribute="top" constant="100" id="Ugz-ON-7Fj"/>
+                <constraint firstItem="qGD-tq-Dx3" firstAttribute="top" secondItem="2" secondAttribute="top" id="Ugz-ON-7Fj"/>
                 <constraint firstAttribute="trailing" secondItem="hz6-F3-qfc" secondAttribute="trailing" id="d4Z-F9-4Hq"/>
                 <constraint firstAttribute="bottomMargin" secondItem="hz6-F3-qfc" secondAttribute="bottom" id="eTW-z9-G7p"/>
                 <constraint firstItem="qGD-tq-Dx3" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="l4F-Er-lOd"/>

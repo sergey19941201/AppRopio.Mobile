@@ -155,7 +155,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
         private void BindMessage(UILabel label, UIView view, MvxFluentBindingDescriptionSet<BasketViewController, IBasketViewModel> set)
         {
             HideLargeDisplayMode();
-            _StackTopConstraint.Constant = this.NavigationController.NavigationBar.Frame.Size.Height + UIApplication.SharedApplication.StatusBarFrame.Size.Height;
+            //_StackTopConstraint.Constant = this.NavigationController.NavigationBar.Frame.Size.Height + UIApplication.SharedApplication.StatusBarFrame.Size.Height;
             set.Bind(label).For(v => v.Text).To(vm => vm.Message);
             set.Bind(view).For("Visibility").To(vm => vm.Message).WithConversion("Visibility");
             ResolveAndSetupLoyalty(_loyaltyWrapper);
