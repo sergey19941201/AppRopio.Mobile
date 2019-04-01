@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using AppRopio.Base.Core.Extentions;
+using AppRopio.Base.Core.Messages.Module;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
 using AppRopio.ECommerce.Basket.Core.Messages;
 using AppRopio.ECommerce.Basket.Core.Messages.Order;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.Services;
+using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
 using AppRopio.Payments.Core.Bundle;
@@ -37,12 +39,12 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
         private IMvxCommand _selectionChangedCommand;
         public IMvxCommand SelectionChangedCommand
-		{
-			get
-			{
+        {
+            get
+            {
                 return _selectionChangedCommand ?? (_selectionChangedCommand = new MvxCommand<IDeliveryTypeItemVM>(OnDeliveryChanged));
-			}
-		}
+            }
+        }
 
         private ICommand _applyDeliveryTimeCommand;
         public ICommand ApplyDeliveryTimeCommand
@@ -62,17 +64,17 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
         private MvxObservableCollection<IDeliveryTypeItemVM> _items;
         public MvxObservableCollection<IDeliveryTypeItemVM> Items
-		{
-			get
-			{
-				return _items;
-			}
-			set
-			{
-				_items = value;
-				RaisePropertyChanged(() => Items);
-			}
-		}
+        {
+            get
+            {
+                return _items;
+            }
+            set
+            {
+                _items = value;
+                RaisePropertyChanged(() => Items);
+            }
+        }
 
         private MvxObservableCollection<IDeliveryDayItemVM> _daysItems;
         public MvxObservableCollection<IDeliveryDayItemVM> DaysItems
@@ -85,7 +87,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             {
                 if (value == null || value.Count == 0)
                     IsShowDeliveryTimePicker = false;
-                
+
                 _daysItems = value;
                 RaisePropertyChanged(() => DaysItems);
             }
@@ -116,7 +118,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
         public IDeliveryDayItemVM SelectedDeliveryDay
         {
             get => _selectedDeliveryDay;
-            set 
+            set
             {
                 SetProperty(ref _selectedDeliveryDay, value, nameof(SelectedDeliveryDay));
                 TimeItems = new MvxObservableCollection<IDeliveryTimeItemVM>(value.Times);
@@ -221,6 +223,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
         protected IOrderVmService OrderVmService { get { return Mvx.Resolve<IOrderVmService>(); } }
         protected IDeliveryVmService DeliveryVmService { get { return Mvx.Resolve<IDeliveryVmService>(); } }
+
+        protected IBasketVmService BasketVmService { get { return Mvx.Resolve<IBasketVmService>(); } }
         protected IBasketNavigationVmService NavigationVmService { get { return Mvx.Resolve<IBasketNavigationVmService>(); } }
 
         #endregion
@@ -309,12 +313,15 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
         {
             BasketAmount = basketBundle.BasketAmount;
             Amount = basketBundle.BasketAmount;
+
+            RecalcAmount();
         }
 
         #endregion
 
         protected virtual void OnDeliveryConfirmed(DeliveryConfirmedMessage message)
         {
+            RecalcAmount();
             DeliveryPrice = message.DeliveryPrice;
             Amount = BasketAmount + (DeliveryPrice ?? 0);
 
@@ -373,6 +380,42 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             });
         }
 
+
+        //TODO make some changes if needed. New method from basket here
+        protected virtual async void RecalcAmount()
+        {
+            if (Items == null || Items.Count == 0)
+            {
+                InvokeOnMainThread(() =>
+                {
+                    //IsEmpty = true;
+                    Amount = 0;
+                });
+                Messenger.Publish(new ModulesInteractionMessage<int>(this, 0));
+                return;
+            }
+
+            //amount calculate on server side
+            try
+            {
+                var amount = await BasketVmService.LoadBasketSummaryAmount() + (DeliveryPrice ?? 0);
+                InvokeOnMainThread(() =>
+                {
+                    Amount = amount;
+                    //AmountLoading = false;
+                    NextCommand.RaiseCanExecuteChanged();
+                });
+
+                //TODO: сделать верификацию если корзина не валидна (IsNeedToLoad + LoadIfNeeded)
+            }
+            catch (OperationCanceledException)
+            {
+                //nothing
+            }
+
+        }
+
+
         protected async void OnNextExecute()
         {
             if (!Items.IsNullOrEmpty() && !Items.Any(x => x is IDeliveryTypeItemVM deliveryItem && deliveryItem.IsSelected))
@@ -401,7 +444,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
             if (_paymentSelectedToken == null)
                 _paymentSelectedToken = Messenger.Subscribe<PaymentSelectedMessage>(OnPaymentSelectedMessage);
-            
+
             var selectedDelivery = Items?.FirstOrDefault(x => x is IDeliveryTypeItemVM deliveryItem && deliveryItem.IsSelected) as IDeliveryTypeItemVM;
 
             var isNeedToSelectPayment = await OrderVmService.IsPaymentNecessary(selectedDelivery?.Id);
