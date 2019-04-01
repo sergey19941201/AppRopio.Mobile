@@ -56,10 +56,6 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView _messageView { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint _StackTopConstraint { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
             if (_bottomView != null) {
@@ -110,11 +106,6 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
             if (_nextButton != null) {
                 _nextButton.Dispose ();
                 _nextButton = null;
-            }
-
-            if (_StackTopConstraint != null) {
-                _StackTopConstraint.Dispose ();
-                _StackTopConstraint = null;
             }
 
             if (_tableView != null) {
