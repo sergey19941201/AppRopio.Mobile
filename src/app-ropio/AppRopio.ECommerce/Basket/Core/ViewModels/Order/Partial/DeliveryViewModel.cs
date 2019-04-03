@@ -7,6 +7,7 @@ using AppRopio.Base.Core.Extentions;
 using AppRopio.Base.Core.Messages.Module;
 using AppRopio.Base.Core.Models.Navigation;
 using AppRopio.Base.Core.ViewModels;
+using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.Messages;
 using AppRopio.ECommerce.Basket.Core.Messages.Order;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
@@ -14,6 +15,8 @@ using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services;
+using AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementation;
+using AppRopio.Models.Basket.Responses.Enums;
 using AppRopio.Payments.Core.Bundle;
 using AppRopio.Payments.Core.Messages;
 using MvvmCross.Core.ViewModels;
@@ -32,7 +35,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
         private MvxSubscriptionToken _orderProcessingToken;
         private MvxSubscriptionToken _orderPaidToken;
         private MvxSubscriptionToken _paymentSelectedToken;
-
+        private IDeliveryTypeItemVM selectedItem;
+        private IDeliveryService iDeliveryService;
         #endregion
 
         #region Commands
@@ -222,7 +226,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
         #region Services
 
         protected IOrderVmService OrderVmService { get { return Mvx.Resolve<IOrderVmService>(); } }
-        protected IDeliveryVmService DeliveryVmService { get { return Mvx.Resolve<IDeliveryVmService>(); } }
+        protected IDeliveryVmService _______DeliveryVmService { get { return Mvx.Resolve<IDeliveryVmService>(); } }
 
         protected IBasketVmService BasketVmService { get { return Mvx.Resolve<IBasketVmService>(); } }
         protected IBasketNavigationVmService NavigationVmService { get { return Mvx.Resolve<IBasketNavigationVmService>(); } }
@@ -331,7 +335,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
                     delivery.IsSelected = false;
             });
 
-            var selectedItem = Items.FirstOrDefault(x => x is IDeliveryTypeItemVM delivery && delivery.Id.Equals(message.DeliveryId)) as IDeliveryTypeItemVM;
+            selectedItem = Items.FirstOrDefault(x => x is IDeliveryTypeItemVM delivery && delivery.Id.Equals(message.DeliveryId)) as IDeliveryTypeItemVM;
             selectedItem.IsSelected = true;
 
             SelectedDeliveryTime = null;
@@ -349,7 +353,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
             DeliveryTimeLoading = true;
 
-            DaysItems = await DeliveryVmService.LoadDeliveryTime(deliveryId);
+            DaysItems = await _______DeliveryVmService.LoadDeliveryTime(deliveryId);
 
             DeliveryTimeLoading = false;
 
@@ -365,7 +369,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
             Task.Run(async () =>
             {
-                if (!await DeliveryVmService.ConfirmDeliveryTime(deliveryTime.Id))
+                if (!await _______DeliveryVmService.ConfirmDeliveryTime(deliveryTime.Id))
                 {
                     var selectedItem = Items.First(x => x is IDeliveryTypeItemVM delivery && delivery.IsSelected) as IDeliveryTypeItemVM;
                     LoadDeliveryTime(selectedItem.Id);
@@ -399,6 +403,17 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             try
             {
                 var amount = await BasketVmService.LoadBasketSummaryAmount() + (DeliveryPrice ?? 0);
+
+                //selectedItem
+                //DeliveryVmService.SelectedDeliveryPointId = 60109;
+                //iDeliveryService.SelectedDeliveryPointId
+                //var dffd = selectedItem.Name;
+                // Discount should work from 499 rubles
+                //await UserDialogs.Alert(DeliveryVmService.SelectedDeliveryPointId.ToString());
+                if (selectedItem?.Type == DeliveryType.DeliveryPoint &&
+                     amount >= 499 &&
+                     (DeliveryVmService.SelectedDeliveryPointId == 29177 || DeliveryVmService.SelectedDeliveryPointId == 29507))
+                            await UserDialogs.Alert("Скидка на самовывоз применена");
                 InvokeOnMainThread(() =>
                 {
                     Amount = amount;
@@ -473,7 +488,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
             Loading = true;
 
-            Items = await DeliveryVmService.LoadDeliveryTypes();
+            Items = await _______DeliveryVmService.LoadDeliveryTypes();
 
             Amount = BasketAmount + (DeliveryPrice ?? 0);
 
@@ -512,7 +527,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
                 {
                     Loading = true;
 
-                    if (await DeliveryVmService.ValidateAndSaveDelivery(deliveryItem.Id))
+                    if (await _______DeliveryVmService.ValidateAndSaveDelivery(deliveryItem.Id))
                         OnDeliveryConfirmed(new DeliveryConfirmedMessage(this) { DeliveryId = deliveryItem.Id, DeliveryPrice = deliveryItem.Price });
 
                     Loading = false;

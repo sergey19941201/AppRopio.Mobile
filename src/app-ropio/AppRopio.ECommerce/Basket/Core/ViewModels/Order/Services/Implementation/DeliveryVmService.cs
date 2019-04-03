@@ -19,6 +19,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
     {
         #region Protected
 
+        //todo make clear
+        public static int? SelectedDeliveryPointId { get; set; }
+
         protected virtual IOrderFieldItemVM SetupOrderFieldItem(OrderField model)
         {
             return new OrderFieldItemVM(model);
@@ -150,6 +153,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Services.Implementatio
             var result = false;
             try
             {
+                SelectedDeliveryPointId = Convert.ToInt32(deliveryPointId);
                 await DeliveryService.ConfirmDeliveryPoint(deliveryId, deliveryPointId);
                 result = true;
             }

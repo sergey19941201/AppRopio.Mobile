@@ -20,7 +20,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Implementation
         protected string CONFIRM_DELIVERY_ADDRESS = "order/confirmDeliveryAddress";
         protected string DELIVERY_PRICE = "order/deliveryPrice";
         protected string DELIVERY_TIME = "order/deliveryTime";
-        
+
         public async Task<FieldsValidation> ConfirmDeliveryAddress(string deliveryId, Dictionary<string, string> addressFieldsIdValues)
         {
             return await Post<FieldsValidation>(CONFIRM_DELIVERY_ADDRESS, ToStringContent(new ConfirmDeliveryAddressRequest { DeliveryId = deliveryId, FieldsValues = addressFieldsIdValues }));

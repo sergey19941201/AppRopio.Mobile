@@ -39,6 +39,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery
 
         public string Message { get; }
 
+
         #endregion
 
         #region Constructor
@@ -47,7 +48,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Items.Delivery
         {
             if (model == null)
                 throw new ArgumentNullException(nameof(model));
-            
+
             Id = model.Id;
             Name = model.Name;
             Type = model.Type;

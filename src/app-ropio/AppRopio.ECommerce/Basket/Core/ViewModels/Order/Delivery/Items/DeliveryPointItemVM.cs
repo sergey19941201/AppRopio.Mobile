@@ -75,6 +75,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Delivery.Items
 
         public string Distance { get; private set; }
 
+        public string WarehouseName { get; private set; }
+
         public string Phone { get; private set; }
 
         public string AdditionalInfo { get; private set; }
