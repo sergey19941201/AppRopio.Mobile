@@ -24,6 +24,7 @@
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
                 <outlet property="_messageView" destination="vZP-Pr-JI5" id="name-outlet-vZP-Pr-JI5"/>
                 <outlet property="_messageLabel" destination="6zr-xv-0Hq" id="name-outlet-6zr-xv-0Hq"/>
+                <outlet property="_StackTopConstraint" destination="Ugz-ON-7Fj" id="name-outlet-Ugz-ON-7Fj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

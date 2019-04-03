@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using AppRopio.Base.Core;
 using AppRopio.Base.Core.Converters;
@@ -11,9 +13,12 @@ using AppRopio.ECommerce.Basket.Core.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels;
 using AppRopio.ECommerce.Basket.iOS.Services;
 using AppRopio.ECommerce.Basket.iOS.Views.Basket.Cells;
+using CoreText;
+using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
+using MvvmCross.Platform.Converters;
 using UIKit;
 
 namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
@@ -156,10 +161,14 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
         {
             HideLargeDisplayMode();
             //_StackTopConstraint.Constant = this.NavigationController.NavigationBar.Frame.Size.Height + UIApplication.SharedApplication.StatusBarFrame.Size.Height;
-            set.Bind(label).For(v => v.Text).To(vm => vm.Message);
+            set.Bind(label).For(v => v.AttributedText).To(vm => vm.Message)
+                   .WithConversion(new StringFormatParameterATTTTTTTR());
+
             set.Bind(view).For("Visibility").To(vm => vm.Message).WithConversion("Visibility");
             ResolveAndSetupLoyalty(_loyaltyWrapper);
         }
+
+
 
         protected virtual void BindNextButton(UIButton nextButton, MvxFluentBindingDescriptionSet<BasketViewController, IBasketViewModel> set)
         {
@@ -171,10 +180,10 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
                    new StringFormatParameter
                    {
                        StringFormat = (arg) =>
-{
-    var str = $"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {((decimal)arg).ToString(AppSettings.CurrencyFormat, AppSettings.SettingsCulture.NumberFormat)}";
-    return BasketTheme.NextButton.UppercaseTitle ? str.ToUpperInvariant() : str;
-}
+                        {
+                            var str = $"{LocalizationService.GetLocalizableString(BasketConstants.RESX_NAME, "Basket_OrderBy")} {((decimal)arg).ToString(AppSettings.CurrencyFormat, AppSettings.SettingsCulture.NumberFormat)}";
+                            return BasketTheme.NextButton.UppercaseTitle ? str.ToUpperInvariant() : str;
+                        }
                    });
 
             set.Bind(nextButton).To(vm => vm.NextCommand);
@@ -200,6 +209,53 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
         }
 
         #endregion
+    }
+
+    public class StringFormatParameterATTTTTTTR : MvxValueConverter<string, NSMutableAttributedString>
+    {
+        protected override NSMutableAttributedString Convert(string value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var BoldString = new NSMutableAttributedString(value);
+
+            var BoldTextAttributes = new UIStringAttributes
+            {
+                Font = UIFont.FromName("Helvetica-Bold", 17f)
+            };
+
+            var discountStartIndexes = ekfkkefkfke.AllIndexesOf(value.ToLower(), "скидка");
+
+            for (int i = 0; i < discountStartIndexes.Count; i++)
+            {
+                var currentIndex = discountStartIndexes[i];
+                for (int y = currentIndex; y < value.Length; y++)
+                {
+                    if (value[y] == '%')
+                    {
+                        BoldString.SetAttributes(BoldTextAttributes.Dictionary, new NSRange(currentIndex, y - currentIndex + 1));
+                        break;
+                    }
+                }
+            }
+
+            return BoldString;
+        }
+    }
+
+    public static class ekfkkefkfke
+    {
+        public static List<int> AllIndexesOf(this string str, string value)
+        {
+            if (String.IsNullOrEmpty(value))
+                throw new ArgumentException("the string to find may not be empty", "value");
+            List<int> indexes = new List<int>();
+            for (int index = 0; ; index += value.Length)
+            {
+                index = str.IndexOf(value, index);
+                if (index == -1)
+                    return indexes;
+                indexes.Add(index);
+            }
+        }
     }
 }
 

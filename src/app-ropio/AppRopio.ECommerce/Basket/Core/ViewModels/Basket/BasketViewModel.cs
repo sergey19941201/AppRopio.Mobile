@@ -139,6 +139,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
             set
             {
                 _message = value;
+                if (_message != null && !isMessageFormatted)
+                    FormatMessage();
                 RaisePropertyChanged(() => Message);
             }
         }
@@ -326,7 +328,15 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
             DeleteItem(item.ProductId);
         }
 
-       
+        bool isMessageFormatted = false;
+        private void FormatMessage()
+        {
+            isMessageFormatted = true;
+
+            //AttributedText
+
+            //Message = "\n\n\n\n\n\n\n\n\n AAAAAA";
+        }
 
         protected virtual async void RecalcAmount()
         {
