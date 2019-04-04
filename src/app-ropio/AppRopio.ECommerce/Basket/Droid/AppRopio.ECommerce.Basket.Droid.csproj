@@ -198,6 +198,7 @@
     <Compile Include="Views\CartIndicator\BasketCartIndicatorView.cs" />
     <Compile Include="Views\ProductCard\BasketProductCardView.cs" />
     <Compile Include="Views\CatalogCard\BasketCatalogItemView.cs" />
+    <Compile Include="ValueConvertors\BasketMessageBoldValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -259,6 +260,7 @@
     <Folder Include="Views\CartIndicator\" />
     <Folder Include="Views\ProductCard\" />
     <Folder Include="Views\CatalogCard\" />
+    <Folder Include="ValueConvertors\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\AppRopio.Base\Core\AppRopio.Base.Core.csproj">

@@ -162,7 +162,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
             HideLargeDisplayMode();
             //_StackTopConstraint.Constant = this.NavigationController.NavigationBar.Frame.Size.Height + UIApplication.SharedApplication.StatusBarFrame.Size.Height;
             set.Bind(label).For(v => v.AttributedText).To(vm => vm.Message)
-                   .WithConversion(new StringFormatParameterATTTTTTTR());
+                   .WithConversion(new BasketMessageBoldValueConverter());
 
             set.Bind(view).For("Visibility").To(vm => vm.Message).WithConversion("Visibility");
             ResolveAndSetupLoyalty(_loyaltyWrapper);
@@ -211,7 +211,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
         #endregion
     }
 
-    public class StringFormatParameterATTTTTTTR : MvxValueConverter<string, NSMutableAttributedString>
+    public class BasketMessageBoldValueConverter : MvxValueConverter<string, NSMutableAttributedString>
     {
         protected override NSMutableAttributedString Convert(string value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -222,7 +222,7 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
                 Font = UIFont.FromName("Helvetica-Bold", 17f)
             };
 
-            var discountStartIndexes = ekfkkefkfke.AllIndexesOf(value.ToLower(), "скидка");
+            var discountStartIndexes = AllIndexesOf(value.ToLower(), "скидка");
 
             for (int i = 0; i < discountStartIndexes.Count; i++)
             {
@@ -239,11 +239,8 @@ namespace AppRopio.ECommerce.Basket.iOS.Views.Basket
 
             return BoldString;
         }
-    }
 
-    public static class ekfkkefkfke
-    {
-        public static List<int> AllIndexesOf(this string str, string value)
+        List<int> AllIndexesOf(string str, string value)
         {
             if (String.IsNullOrEmpty(value))
                 throw new ArgumentException("the string to find may not be empty", "value");

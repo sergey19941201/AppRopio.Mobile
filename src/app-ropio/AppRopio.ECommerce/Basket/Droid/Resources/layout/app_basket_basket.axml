@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/message_textView"
-        app:MvxBind="Text Message; Visibility Visibility(Message)"
+        app:MvxBind="Text Message; Visibility Visibility(Message); TextFormatted BasketMessageBold(Message)"
         android:textColor="#ff000000"
         android:paddingStart="10dp"
         android:paddingEnd="8.5dp"
