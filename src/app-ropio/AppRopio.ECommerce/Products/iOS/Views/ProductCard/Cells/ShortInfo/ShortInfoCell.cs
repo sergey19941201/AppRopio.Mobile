@@ -1,14 +1,17 @@
 using System;
+using System.Timers;
 using AppRopio.Base.Core.Combiners;
 using AppRopio.Base.Core.Converters;
 using AppRopio.Base.iOS;
 using AppRopio.Base.iOS.UIExtentions;
 using AppRopio.ECommerce.Products.Core.Models;
 using AppRopio.ECommerce.Products.Core.Services;
+using AppRopio.ECommerce.Products.Core.ViewModels.Catalog.Items;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.ShortInfo;
 using AppRopio.ECommerce.Products.iOS.Models;
 using AppRopio.ECommerce.Products.iOS.Services;
 using AppRopio.ECommerce.Products.iOS.Views.Catalog.Cells;
+using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
@@ -64,12 +67,11 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.ShortInfo
 
         protected virtual void SetupBadgesCollection(UICollectionView badges)
         {
-            //var gfgfg = Bounds.Width - badges.Frame.X * 2;
-            (badges.CollectionViewLayout as UICollectionViewFlowLayout).ItemSize = new CoreGraphics.CGSize(Bounds.Width / 3 * 2/*- badges.Frame.X+badges.Frame.Width*/, BadgeCell.HEIGHT);
+            (badges.CollectionViewLayout as UICollectionViewFlowLayout).ItemSize = new CoreGraphics.CGSize(BadgeCell.WIDTH, BadgeCell.HEIGHT);
 
             var viewModel = DataContext as IShortInfoProductsPciVm;
             if (viewModel != null)
-                _badgesWidthContraint.Constant = Bounds.Width/5*4; //- badges.Frame.X * 2;//viewModel.Badges.IsNullOrEmpty() ? 0 : Math.Min(3f * BadgeCell.WIDTH, viewModel.Badges.Count * BadgeCell.WIDTH);
+                _badgesWidthContraint.Constant = UIScreen.MainScreen.Bounds.Width /*/ 2*/ - 10 * 2;  //- cell; //viewModel.Badges.IsNullOrEmpty() ? 0 : Math.Min(3f * BadgeCell.WIDTH, viewModel.Badges.Count * BadgeCell.WIDTH);
 
             badges.RegisterNibForCell(BadgeCell.Nib, BadgeCell.Key);
         }
@@ -129,7 +131,6 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.ShortInfo
             badges.Source = dataSource;
 
             set.Bind(dataSource).To(vm => vm.Badges);
-
             badges.ReloadData();
         }
 
