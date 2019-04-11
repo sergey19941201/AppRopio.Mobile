@@ -22,6 +22,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
         private MvxSubscriptionToken _reloadingToken;
 
+        private MvxSubscriptionToken _availableToken;
+
         #endregion
 
         #region Commands
@@ -45,6 +47,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         protected Product Model { get; private set; }
 
         protected bool ReloadingByParameter { get; set; }
+
+        public bool ProductAvailable { get; set; }
 
         protected virtual string AnalyticsPrefix => "catalog_product_card";
 
@@ -206,7 +210,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         {
             if (Model == null)
                 return;
-            
+
             BasketLoading = true;
 
             RaiseCommandsCanExecuteChanged();
@@ -250,9 +254,17 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
 
                 Task.Run(InitProperties);
 
+                //new ProductDetailsReloadingByParameterMessage().
+
                 _reloadingToken = Messenger.Subscribe<ProductDetailsReloadingByParameterMessage>(msg =>
                 {
                     ReloadingByParameter = msg.Reloading;
+                    RaiseCommandsCanExecuteChanged();
+                });
+
+                _availableToken = Messenger.Subscribe<ProductAvailableMessage>(msg =>
+                {
+                    ProductAvailable = msg.ProductAvailable;
                     RaiseCommandsCanExecuteChanged();
                 });
             }
@@ -275,7 +287,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         {
             if (Model == null)
                 return;
-            
+
             BasketLoading = true;
 
             RaiseCommandsCanExecuteChanged();
@@ -317,7 +329,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         {
             if (Model == null)
                 return;
-            
+
             Quantity += Model.UnitStep;
 
             AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_change_quantity_increment_button", Model.Id);
@@ -329,7 +341,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         {
             if (Model == null)
                 return;
-            
+
             if (Quantity - Model.UnitStep <= 0)
             {
                 await DeleteProductFromBasket();
@@ -348,7 +360,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
         {
             if (Model == null)
                 return;
-            
+
             AnalyticsNotifyingService.NotifyEventIsHandled("catalog", AnalyticsPrefix + "_change_quantity_text_field", Model.Id);
 
             if (float.TryParse(QuantityString.Replace(" ", ""), NumberStyles.Any, NumberFormatInfo.InvariantInfo, out float result))
@@ -375,7 +387,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
             }
         }
 
-        protected virtual bool OnBuyCommandCanExecute() => !BasketLoading && !ReloadingByParameter && !QuantityLoading;
+        protected virtual bool OnBuyCommandCanExecute() => !BasketLoading && !ReloadingByParameter && !QuantityLoading && ProductAvailable;
 
         #endregion
 
@@ -389,6 +401,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.ProductCard
             BasketVisible = true;
             UnitStepVisible = false;
             QuantityLoading = false;
+            ProductAvailable = false;
 
             base.Unbind();
         }

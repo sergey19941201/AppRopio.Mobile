@@ -316,6 +316,10 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services
             }
             catch (ConnectionException ex)
             {
+                if("Товар с указанными параметрами отсутствует" == await ex.RequestResult.ResponseContent.ReadAsStringAsync())
+                {
+                    return null;
+                }
                 OnConnectionException(ex);
             }
             catch (Exception ex)

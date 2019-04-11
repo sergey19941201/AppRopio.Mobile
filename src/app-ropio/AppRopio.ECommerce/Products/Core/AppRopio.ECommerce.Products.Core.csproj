@@ -165,6 +165,7 @@
     <Compile Include="Combiners\PriceFromUnitCombiner.cs" />
     <Compile Include="Combiners\PriceFromFormatCombiner.cs" />
     <Compile Include="Combiners\PriceVisibilityValueCombiner.cs" />
+    <Compile Include="Messages\ProductAvailableMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Realm.DataBinding">

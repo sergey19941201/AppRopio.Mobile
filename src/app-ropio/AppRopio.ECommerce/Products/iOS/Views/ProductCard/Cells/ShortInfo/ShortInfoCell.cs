@@ -71,7 +71,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.ShortInfo
 
             var viewModel = DataContext as IShortInfoProductsPciVm;
             if (viewModel != null)
-                _badgesWidthContraint.Constant = UIScreen.MainScreen.Bounds.Width /*/ 2*/ - 10 * 2;  //- cell; //viewModel.Badges.IsNullOrEmpty() ? 0 : Math.Min(3f * BadgeCell.WIDTH, viewModel.Badges.Count * BadgeCell.WIDTH);
+                _badgesWidthContraint.Constant = UIScreen.MainScreen.Bounds.Width /*/ 2*/ - 12 * 2;  //- cell; //viewModel.Badges.IsNullOrEmpty() ? 0 : Math.Min(3f * BadgeCell.WIDTH, viewModel.Badges.Count * BadgeCell.WIDTH);
 
             badges.RegisterNibForCell(BadgeCell.Nib, BadgeCell.Key);
         }
@@ -136,7 +136,7 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.ShortInfo
 
         protected virtual MvxCollectionViewSource SetupBadgesViewSource(UICollectionView badges)
         {
-            return new MvxCollectionViewSource(badges, BadgeCell.Key);
+            return new BadgesCollectionViewSource(badges, BadgeCell.Key);
         }
 
         protected virtual void BindExtraPrice(UILabel extraPrice, MvxFluentBindingDescriptionSet<ShortInfoCell, IShortInfoProductsPciVm> set)
@@ -180,5 +180,41 @@ namespace AppRopio.ECommerce.Products.iOS.Views.ProductCard.Cells.ShortInfo
         }
 
         #endregion
+    }
+
+    public class BadgesCollectionViewSource : MvxCollectionViewSource
+    {
+        public BadgesCollectionViewSource(UICollectionView collectionView) : base(collectionView)
+        {
+        }
+
+        public BadgesCollectionViewSource(UICollectionView collectionView, NSString defaultCellIdentifier) : base(collectionView, defaultCellIdentifier)
+        {
+        }
+
+        [Export("collectionView:layout:sizeForItemAtIndexPath:")]
+        public virtual CGSize GetSizeForItem(UICollectionView collectionView, UICollectionViewLayout layout, NSIndexPath indexPath)
+        {
+
+            var size = new CGSize(BadgeCell.WIDTH, BadgeCell.HEIGHT);
+
+            if (GetItemAt(indexPath) is IProductBadgeItemVM item)
+            {
+                var label = new AppRopio.Base.iOS.Controls.ARLabel()
+                    .WithFrame(0, 0, 0, BadgeCell.HEIGHT)
+                    .WithTune(tune => {
+                        tune.Font = UIFont.SystemFontOfSize(14.0f, UIFontWeight.Regular);
+                        tune.Text = item.Name;
+                    });
+
+                //label.SetupStyle(ThemeConfig.Products.ProductCell.Badge);
+                label.SizeToFit();
+
+                var width = label.Frame.Width + 20; //6 margin 4 padding
+                size = new CGSize(width, BadgeCell.HEIGHT);
+            }
+
+            return size;
+        }
     }
 }

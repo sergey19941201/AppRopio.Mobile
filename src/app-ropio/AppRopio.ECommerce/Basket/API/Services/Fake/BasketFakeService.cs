@@ -47,7 +47,7 @@ namespace AppRopio.ECommerce.Basket.API.Services.Fake
                             Color = "#FC224B"
                         }
                     },
-                        State = new ProductState { Name = IsRussianCulture ? "В наличии" : "In stock", Type = ProductStateType.InStock },
+                        State = new ProductState { Name = IsRussianCulture ? "В наличии(нет)" : "In stock", Type = ProductStateType.OutOfStock },
                     Quantity = 2,
                     UnitName = IsRussianCulture ? "шт" : "PC",
                     UnitStep = 1.0f

@@ -50,13 +50,24 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
         protected CancellationTokenSource ProductParameterCTS { get; set; }
 
         private bool _reloadingByParameter;
-        protected bool ReloadingByParameter 
+        protected bool ReloadingByParameter
         {
             get => _reloadingByParameter;
             set
             {
                 _reloadingByParameter = value;
                 Messenger.Publish(new ProductDetailsReloadingByParameterMessage(this, value));
+            }
+        }
+
+        private bool _productAvailable;
+        protected bool ProductAvailable
+        {
+            get => _productAvailable;
+            set
+            {
+                _productAvailable = value;
+                Messenger.Publish(new ProductAvailableMessage(this, value));
             }
         }
 
@@ -163,6 +174,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
 
             InvokeOnMainThread(() => Items.AddRange(dataSource));
 
+            await ReloadProductByParameters();
+
             Loading = false;
         }
 
@@ -201,9 +214,12 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
                 ProductId = Model.Id;
 
                 var newItems = await VmService.LoadBasicProductCardItems(newProductInfo);
+                ProductAvailable = true;
 
                 Items.ReplaceRange(newItems, 0, Items.Count(x => x is IProductBasicItemVM));
             }
+            else
+                ProductAvailable = false;
 
             ReloadingByParameter = false;
         }
@@ -265,7 +281,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
                     var result = await MarkProductVmService.MarkProductAsFavorite(GroupId, ProductId, Marked);
                     if (!result)
                         InvokeOnMainThread(() => Marked = !Marked);
-                    
+
                     InvokeOnMainThread(() =>
                     {
                         Messenger.Publish(new ProductCardMarkedMessage(this, Model, Marked));
@@ -344,7 +360,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
         public override void Unbind()
         {
             (BasketBlockViewModel as IBaseViewModel)?.Unbind();
-            
+
             base.Unbind();
         }
 

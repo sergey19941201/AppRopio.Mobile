@@ -44,7 +44,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                         },
                         new ProductBadge
                         {
-                            Name = "salesale",
+                            Name = "salesalesalesale",
                             Color = "#FC224B"
                         }
                     },
@@ -69,7 +69,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     {
                             new ProductBadge
                         {
-                            Name = "salesale",
+                            Name = "salesalesalesale",
                             Color = "#FC224B"
                         }
                     },
@@ -185,7 +185,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     {
                         new ProductBadge
                         {
-                            Name = "salesale",
+                            Name = "salesalesalesale",
                             Color = "#FC224B"
                         }
                     },
@@ -235,7 +235,7 @@ namespace AppRopio.ECommerce.Products.API.Services.Fakes
                     {
                         new ProductBadge
                         {
-                            Name = "salesale",
+                            Name = "salesalesalesale",
                             Color = "#FC224B"
                         }
                     },
