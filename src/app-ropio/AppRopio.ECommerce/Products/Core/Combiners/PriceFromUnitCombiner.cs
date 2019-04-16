@@ -40,7 +40,7 @@ namespace AppRopio.ECommerce.Products.Core.Combiners
                     format = price.HasValue;
                 }
                 if (format)
-                    priceString = $"{_localizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceFrom")} {priceString}";
+                    priceString = $"{/*_localizationService.GetLocalizableString(ProductsConstants.RESX_NAME, "Catalog_PriceFrom")*/"от"} {priceString}";
             }
 
             value = priceString;
