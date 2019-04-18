@@ -284,6 +284,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services
             {
                 ProductDetails details = null;
 
+                _cachedDetails?.Clear();
                 if (!_cachedDetails.TryGetValue($"{groupId}{productId}", out details))
                 {
                     details = await ProductService.LoadProductDetails(groupId, productId);

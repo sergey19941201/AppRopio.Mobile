@@ -179,10 +179,11 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
             Loading = false;
         }
 
-        private void OnSelectedValueChanged(object sender, PropertyChangedEventArgs e)
+        private async void OnSelectedValueChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "SelectedValue")
                 OnParameterChanged();
+            await CheckReload();
         }
 
         private void OnItemSelected(IMvxViewModel viewModel)
@@ -190,6 +191,21 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
             var selectableItem = viewModel as ISelectableProductCardItemVM;
             if (selectableItem != null)
                 selectableItem.OnSelected();
+        }
+
+        private async Task CheckReload()
+        {
+            if (Model != null )//&& (Model.NeedsReload))
+            {
+                var dataSource = await VmService.LoadDetailsProductCardItems(GroupId, ProductId);
+                if (dataSource?.Count > 3)
+                {
+                    InvokeOnMainThread(() =>
+                    {
+                        Items[3] = dataSource[1];
+                    });
+                }
+            }
         }
 
         private async Task ReloadProductByParameters()
@@ -204,6 +220,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
             }
 
             var newProductInfo = await VmService.ReloadProductByParameters(GroupId, ProductId, applyedParameters);
+
             if (newProductInfo != null)
             {
                 Model = newProductInfo;
@@ -252,7 +269,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
                 {
                     try
                     {
-                        await Task.Delay(1000, DelayCTS.Token);
+                        //await Task.Delay(1000, DelayCTS.Token);
                         await ReloadProductByParameters();
                     }
                     catch (OperationCanceledException)
