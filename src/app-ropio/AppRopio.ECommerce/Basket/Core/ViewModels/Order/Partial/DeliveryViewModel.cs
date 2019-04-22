@@ -413,7 +413,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
                 if (selectedItem?.Type == DeliveryType.DeliveryPoint &&
                      amount >= 499 &&
                      (DeliveryVmService.SelectedDeliveryPointId == 29177 || DeliveryVmService.SelectedDeliveryPointId == 29507))
-                            await UserDialogs.Alert("Скидка на самовывоз применена");
+                            await UserDialogs.Alert("Скидка на самовывоз со склада применена");
+                else if(selectedItem?.Type == DeliveryType.DeliveryPoint && amount >= 499)
+                    await UserDialogs.Alert("Скидка на заказ от 499р применена");
                 InvokeOnMainThread(() =>
                 {
                     Amount = amount;

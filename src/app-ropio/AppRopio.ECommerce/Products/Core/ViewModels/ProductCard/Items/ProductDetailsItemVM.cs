@@ -8,9 +8,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items
     {
         protected string Id { get; }
 
-        public string Name { get; }
+        public string Name { get; set; }
 
-        public ProductWidgetType WidgetType { get; }
+        public ProductWidgetType WidgetType { get; set; }
 
         public ProductDataType DataType { get; }
 

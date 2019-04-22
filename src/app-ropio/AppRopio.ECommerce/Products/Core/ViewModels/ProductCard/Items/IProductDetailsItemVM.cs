@@ -6,9 +6,9 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items
 {
     public interface IProductDetailsItemVM : IMvxViewModel, IMvxNotifyPropertyChanged
     {
-        string Name { get; }
+        string Name { get; set; }
 
-        ProductWidgetType WidgetType { get; }
+        ProductWidgetType WidgetType { get; set; }
 
         ProductDataType DataType { get; }
 

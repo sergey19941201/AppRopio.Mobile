@@ -1,4 +1,5 @@
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading;
@@ -10,6 +11,7 @@ using AppRopio.ECommerce.Products.Core.Messages;
 using AppRopio.ECommerce.Products.Core.Models.Bundle;
 using AppRopio.ECommerce.Products.Core.Services;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items;
+using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Items.ShortInfo;
 using AppRopio.ECommerce.Products.Core.ViewModels.ProductCard.Services;
 using AppRopio.Models.Products.Responses;
 using MvvmCross.Core.ViewModels;
@@ -48,6 +50,10 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
         protected CancellationTokenSource DelayCTS { get; set; }
 
         protected CancellationTokenSource ProductParameterCTS { get; set; }
+
+        // Retrieve value from badge to assign in to Items.
+        private Items.Multiline.MultilinePciVm DiscountValueFromBadgeObject { get; set; }
+        private ObservableCollection<IProductDetailsItemVM> dataSource { get; set; }
 
         private bool _reloadingByParameter;
         protected bool ReloadingByParameter
@@ -183,7 +189,7 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
         {
             if (e.PropertyName == "SelectedValue")
                 OnParameterChanged();
-            await CheckReload();
+            //await CheckReload();
         }
 
         private void OnItemSelected(IMvxViewModel viewModel)
@@ -195,16 +201,12 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
 
         private async Task CheckReload()
         {
-            if (Model != null )//&& (Model.NeedsReload))
+            if (Model != null)//&& (Model.NeedsReload))
             {
-                var dataSource = await VmService.LoadDetailsProductCardItems(GroupId, ProductId);
+                if (DiscountValueFromBadgeObject == null)
+                    DiscountValueFromBadgeObject = (Items.Multiline.MultilinePciVm)Items[3];
                 if (dataSource?.Count > 3)
-                {
-                    InvokeOnMainThread(() =>
-                    {
-                        Items[3] = dataSource[1];
-                    });
-                }
+                    InvokeOnMainThread(() => Items[3] = DiscountValueFromBadgeObject);
             }
         }
 
@@ -221,6 +223,8 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
 
             var newProductInfo = await VmService.ReloadProductByParameters(GroupId, ProductId, applyedParameters);
 
+            await CheckReload();
+
             if (newProductInfo != null)
             {
                 Model = newProductInfo;
@@ -230,7 +234,15 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
                 GroupId = Model.GroupId;
                 ProductId = Model.Id;
 
+                //TODO 
+                #region Discount value copy from badge
                 var newItems = await VmService.LoadBasicProductCardItems(newProductInfo);
+                var _newItems = newItems as ObservableCollection<IProductBasicItemVM>;
+                var discountObject = _newItems[1] as IShortInfoProductsPciVm;
+                DiscountValueFromBadgeObject.Name = discountObject.Badges[0].Name;
+                DiscountValueFromBadgeObject.Text = discountObject.Badges[0].Name + ", подробности при оформлении заказа";
+                #endregion Discount value copy from badge
+
                 ProductAvailable = true;
 
                 Items.ReplaceRange(newItems, 0, Items.Count(x => x is IProductBasicItemVM));
