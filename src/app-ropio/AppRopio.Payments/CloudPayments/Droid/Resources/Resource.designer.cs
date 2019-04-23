@@ -110,8 +110,14 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f01015e
 			public static int MvxDropDownItemTemplate = 2130772318;
 			
+			// aapt resource value: 0x7f01017b
+			public static int MvxFooterTemplate = 2130772347;
+			
 			// aapt resource value: 0x7f01015f
 			public static int MvxGroupItemTemplate = 2130772319;
+			
+			// aapt resource value: 0x7f01017a
+			public static int MvxHeaderTemplate = 2130772346;
 			
 			// aapt resource value: 0x7f01015d
 			public static int MvxItemTemplate = 2130772317;
@@ -124,6 +130,9 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			
 			// aapt resource value: 0x7f01015c
 			public static int MvxTemplate = 2130772316;
+			
+			// aapt resource value: 0x7f01017f
+			public static int MvxTemplateSelector = 2130772351;
 			
 			// aapt resource value: 0x7f010052
 			public static int actionBarDivider = 2130772050;
@@ -248,11 +257,89 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f0100c1
 			public static int alphabeticModifiers = 2130772161;
 			
+			// aapt resource value: 0x7f01016e
+			public static int app_color_accent = 2130772334;
+			
+			// aapt resource value: 0x7f010168
+			public static int app_color_background = 2130772328;
+			
+			// aapt resource value: 0x7f010169
+			public static int app_color_backgroundMenu = 2130772329;
+			
+			// aapt resource value: 0x7f01016b
+			public static int app_color_backgroundNotification = 2130772331;
+			
+			// aapt resource value: 0x7f01016a
+			public static int app_color_backgroundSearch = 2130772330;
+			
+			// aapt resource value: 0x7f010170
+			public static int app_color_disabledControl = 2130772336;
+			
+			// aapt resource value: 0x7f010173
+			public static int app_color_filter_activeColor = 2130772339;
+			
+			// aapt resource value: 0x7f010172
+			public static int app_color_filter_unactiveColor = 2130772338;
+			
+			// aapt resource value: 0x7f01016f
+			public static int app_color_highlightedControl = 2130772335;
+			
+			// aapt resource value: 0x7f010171
+			public static int app_color_invalid = 2130772337;
+			
+			// aapt resource value: 0x7f01016c
+			public static int app_color_placeholder = 2130772332;
+			
+			// aapt resource value: 0x7f01016d
+			public static int app_color_separator = 2130772333;
+			
+			// aapt resource value: 0x7f010163
+			public static int app_color_textAccent = 2130772323;
+			
+			// aapt resource value: 0x7f010165
+			public static int app_color_textAccentDisabled = 2130772325;
+			
+			// aapt resource value: 0x7f010164
+			public static int app_color_textAccentHighlighted = 2130772324;
+			
+			// aapt resource value: 0x7f010161
+			public static int app_color_textBase = 2130772321;
+			
+			// aapt resource value: 0x7f010166
+			public static int app_color_textGray = 2130772326;
+			
+			// aapt resource value: 0x7f010162
+			public static int app_color_textMenu = 2130772322;
+			
+			// aapt resource value: 0x7f010167
+			public static int app_color_textNotification = 2130772327;
+			
+			// aapt resource value: 0x7f010178
+			public static int app_font_bold = 2130772344;
+			
+			// aapt resource value: 0x7f010179
+			public static int app_font_italic = 2130772345;
+			
+			// aapt resource value: 0x7f010175
+			public static int app_font_light = 2130772341;
+			
+			// aapt resource value: 0x7f010176
+			public static int app_font_medium = 2130772342;
+			
+			// aapt resource value: 0x7f010174
+			public static int app_font_regular = 2130772340;
+			
+			// aapt resource value: 0x7f010177
+			public static int app_font_semibold = 2130772343;
+			
 			// aapt resource value: 0x7f0100ba
 			public static int arrowHeadLength = 2130772154;
 			
 			// aapt resource value: 0x7f0100bb
 			public static int arrowShaftLength = 2130772155;
+			
+			// aapt resource value: 0x7f010180
+			public static int aspect = 2130772352;
 			
 			// aapt resource value: 0x7f0100a1
 			public static int autoCompleteTextViewStyle = 2130772129;
@@ -355,6 +442,9 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			
 			// aapt resource value: 0x7f0100a5
 			public static int checkedTextViewStyle = 2130772133;
+			
+			// aapt resource value: 0x7f01017d
+			public static int circle = 2130772349;
 			
 			// aapt resource value: 0x7f0100d5
 			public static int closeIcon = 2130772181;
@@ -475,6 +565,9 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			
 			// aapt resource value: 0x7f010073
 			public static int dividerVertical = 2130772083;
+			
+			// aapt resource value: 0x7f01017c
+			public static int downscale = 2130772348;
 			
 			// aapt resource value: 0x7f0100b8
 			public static int drawableSize = 2130772152;
@@ -799,6 +892,9 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			
 			// aapt resource value: 0x7f010150
 			public static int passwordToggleTintMode = 2130772304;
+			
+			// aapt resource value: 0x7f01017e
+			public static int placeholder = 2130772350;
 			
 			// aapt resource value: 0x7f010078
 			public static int popupMenuStyle = 2130772088;
@@ -1204,44 +1300,44 @@ namespace AppRopio.Payments.CloudPayments.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c0047
-			public static int abc_background_cache_hint_selector_material_dark = 2131492935;
-			
-			// aapt resource value: 0x7f0c0048
-			public static int abc_background_cache_hint_selector_material_light = 2131492936;
-			
 			// aapt resource value: 0x7f0c0049
-			public static int abc_btn_colored_borderless_text_material = 2131492937;
+			public static int abc_background_cache_hint_selector_material_dark = 2131492937;
 			
 			// aapt resource value: 0x7f0c004a
-			public static int abc_btn_colored_text_material = 2131492938;
+			public static int abc_background_cache_hint_selector_material_light = 2131492938;
 			
 			// aapt resource value: 0x7f0c004b
-			public static int abc_color_highlight_material = 2131492939;
+			public static int abc_btn_colored_borderless_text_material = 2131492939;
 			
 			// aapt resource value: 0x7f0c004c
-			public static int abc_hint_foreground_material_dark = 2131492940;
+			public static int abc_btn_colored_text_material = 2131492940;
 			
 			// aapt resource value: 0x7f0c004d
-			public static int abc_hint_foreground_material_light = 2131492941;
+			public static int abc_color_highlight_material = 2131492941;
+			
+			// aapt resource value: 0x7f0c004e
+			public static int abc_hint_foreground_material_dark = 2131492942;
+			
+			// aapt resource value: 0x7f0c004f
+			public static int abc_hint_foreground_material_light = 2131492943;
 			
 			// aapt resource value: 0x7f0c0000
 			public static int abc_input_method_navigation_guard = 2131492864;
 			
-			// aapt resource value: 0x7f0c004e
-			public static int abc_primary_text_disable_only_material_dark = 2131492942;
-			
-			// aapt resource value: 0x7f0c004f
-			public static int abc_primary_text_disable_only_material_light = 2131492943;
-			
 			// aapt resource value: 0x7f0c0050
-			public static int abc_primary_text_material_dark = 2131492944;
+			public static int abc_primary_text_disable_only_material_dark = 2131492944;
 			
 			// aapt resource value: 0x7f0c0051
-			public static int abc_primary_text_material_light = 2131492945;
+			public static int abc_primary_text_disable_only_material_light = 2131492945;
 			
 			// aapt resource value: 0x7f0c0052
-			public static int abc_search_url_text = 2131492946;
+			public static int abc_primary_text_material_dark = 2131492946;
+			
+			// aapt resource value: 0x7f0c0053
+			public static int abc_primary_text_material_light = 2131492947;
+			
+			// aapt resource value: 0x7f0c0054
+			public static int abc_search_url_text = 2131492948;
 			
 			// aapt resource value: 0x7f0c0001
 			public static int abc_search_url_text_normal = 2131492865;
@@ -1252,29 +1348,29 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f0c0003
 			public static int abc_search_url_text_selected = 2131492867;
 			
-			// aapt resource value: 0x7f0c0053
-			public static int abc_secondary_text_material_dark = 2131492947;
-			
-			// aapt resource value: 0x7f0c0054
-			public static int abc_secondary_text_material_light = 2131492948;
-			
 			// aapt resource value: 0x7f0c0055
-			public static int abc_tint_btn_checkable = 2131492949;
+			public static int abc_secondary_text_material_dark = 2131492949;
 			
 			// aapt resource value: 0x7f0c0056
-			public static int abc_tint_default = 2131492950;
+			public static int abc_secondary_text_material_light = 2131492950;
 			
 			// aapt resource value: 0x7f0c0057
-			public static int abc_tint_edittext = 2131492951;
+			public static int abc_tint_btn_checkable = 2131492951;
 			
 			// aapt resource value: 0x7f0c0058
-			public static int abc_tint_seek_thumb = 2131492952;
+			public static int abc_tint_default = 2131492952;
 			
 			// aapt resource value: 0x7f0c0059
-			public static int abc_tint_spinner = 2131492953;
+			public static int abc_tint_edittext = 2131492953;
 			
 			// aapt resource value: 0x7f0c005a
-			public static int abc_tint_switch_track = 2131492954;
+			public static int abc_tint_seek_thumb = 2131492954;
+			
+			// aapt resource value: 0x7f0c005b
+			public static int abc_tint_spinner = 2131492955;
+			
+			// aapt resource value: 0x7f0c005c
+			public static int abc_tint_switch_track = 2131492956;
 			
 			// aapt resource value: 0x7f0c0004
 			public static int accent_material_dark = 2131492868;
@@ -1293,6 +1389,9 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			
 			// aapt resource value: 0x7f0c0009
 			public static int background_material_light = 2131492873;
+			
+			// aapt resource value: 0x7f0c0047
+			public static int blue = 2131492935;
 			
 			// aapt resource value: 0x7f0c000a
 			public static int bright_foreground_disabled_material_dark = 2131492874;
@@ -1318,11 +1417,14 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f0c0011
 			public static int button_material_light = 2131492881;
 			
+			// aapt resource value: 0x7f0c0048
+			public static int cyan = 2131492936;
+			
 			// aapt resource value: 0x7f0c003c
 			public static int design_bottom_navigation_shadow_color = 2131492924;
 			
-			// aapt resource value: 0x7f0c005b
-			public static int design_error = 2131492955;
+			// aapt resource value: 0x7f0c005d
+			public static int design_error = 2131492957;
 			
 			// aapt resource value: 0x7f0c003d
 			public static int design_fab_shadow_end_color = 2131492925;
@@ -1348,8 +1450,8 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f0c0044
 			public static int design_snackbar_background_color = 2131492932;
 			
-			// aapt resource value: 0x7f0c005c
-			public static int design_tint_password_toggle = 2131492956;
+			// aapt resource value: 0x7f0c005e
+			public static int design_tint_password_toggle = 2131492958;
 			
 			// aapt resource value: 0x7f0c0012
 			public static int dim_foreground_disabled_material_dark = 2131492882;
@@ -1471,11 +1573,11 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f0c0036
 			public static int switch_thumb_disabled_material_light = 2131492918;
 			
-			// aapt resource value: 0x7f0c005d
-			public static int switch_thumb_material_dark = 2131492957;
+			// aapt resource value: 0x7f0c005f
+			public static int switch_thumb_material_dark = 2131492959;
 			
-			// aapt resource value: 0x7f0c005e
-			public static int switch_thumb_material_light = 2131492958;
+			// aapt resource value: 0x7f0c0060
+			public static int switch_thumb_material_light = 2131492960;
 			
 			// aapt resource value: 0x7f0c0037
 			public static int switch_thumb_normal_material_dark = 2131492919;
@@ -1723,6 +1825,69 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			
 			// aapt resource value: 0x7f07000a
 			public static int abc_text_size_title_material_toolbar = 2131165194;
+			
+			// aapt resource value: 0x7f0700ad
+			public static int app_b1_text_size = 2131165357;
+			
+			// aapt resource value: 0x7f0700ae
+			public static int app_b2_text_size = 2131165358;
+			
+			// aapt resource value: 0x7f0700af
+			public static int app_b3_text_size = 2131165359;
+			
+			// aapt resource value: 0x7f0700a3
+			public static int app_buttonBase_text_size = 2131165347;
+			
+			// aapt resource value: 0x7f07009e
+			public static int app_button_height = 2131165342;
+			
+			// aapt resource value: 0x7f0700a1
+			public static int app_clickable_size = 2131165345;
+			
+			// aapt resource value: 0x7f0700a8
+			public static int app_h1_text_size = 2131165352;
+			
+			// aapt resource value: 0x7f0700a9
+			public static int app_h2_text_size = 2131165353;
+			
+			// aapt resource value: 0x7f0700aa
+			public static int app_h3_text_size = 2131165354;
+			
+			// aapt resource value: 0x7f0700ab
+			public static int app_h4_text_size = 2131165355;
+			
+			// aapt resource value: 0x7f0700ac
+			public static int app_h5_text_size = 2131165356;
+			
+			// aapt resource value: 0x7f0700a6
+			public static int app_input2_text_size = 2131165350;
+			
+			// aapt resource value: 0x7f0700a7
+			public static int app_input_error_text_size = 2131165351;
+			
+			// aapt resource value: 0x7f0700a4
+			public static int app_input_hint_text_size = 2131165348;
+			
+			// aapt resource value: 0x7f0700a5
+			public static int app_input_text_size = 2131165349;
+			
+			// aapt resource value: 0x7f07009f
+			public static int app_loader_height = 2131165343;
+			
+			// aapt resource value: 0x7f07009b
+			public static int app_payments_inputLayout_height = 2131165339;
+			
+			// aapt resource value: 0x7f07009c
+			public static int app_payments_inputLayout_horizontalMargins = 2131165340;
+			
+			// aapt resource value: 0x7f07009d
+			public static int app_payments_inputLayout_verticalMargins = 2131165341;
+			
+			// aapt resource value: 0x7f0700a0
+			public static int app_separator_height = 2131165344;
+			
+			// aapt resource value: 0x7f0700a2
+			public static int app_toolbar_titleText_size = 2131165346;
 			
 			// aapt resource value: 0x7f07008b
 			public static int compat_button_inset_horizontal_material = 2131165323;
@@ -2230,91 +2395,103 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			public static int abc_vector_test = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public static int avd_hide_password = 2130837587;
-			
-			// aapt resource value: 0x7f02006a
-			public static int avd_hide_password_1 = 2130837610;
-			
-			// aapt resource value: 0x7f02006b
-			public static int avd_hide_password_2 = 2130837611;
-			
-			// aapt resource value: 0x7f02006c
-			public static int avd_hide_password_3 = 2130837612;
+			public static int app_control_button_base = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public static int avd_show_password = 2130837588;
-			
-			// aapt resource value: 0x7f02006d
-			public static int avd_show_password_1 = 2130837613;
-			
-			// aapt resource value: 0x7f02006e
-			public static int avd_show_password_2 = 2130837614;
-			
-			// aapt resource value: 0x7f02006f
-			public static int avd_show_password_3 = 2130837615;
+			public static int app_control_button_base_disabled = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public static int design_bottom_navigation_item_background = 2130837589;
+			public static int app_control_button_base_focused = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public static int design_fab_background = 2130837590;
+			public static int app_control_button_base_normal = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public static int design_ic_visibility = 2130837591;
+			public static int avd_hide_password = 2130837591;
+			
+			// aapt resource value: 0x7f02006e
+			public static int avd_hide_password_1 = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public static int avd_hide_password_2 = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public static int avd_hide_password_3 = 2130837616;
 			
 			// aapt resource value: 0x7f020058
-			public static int design_ic_visibility_off = 2130837592;
+			public static int avd_show_password = 2130837592;
+			
+			// aapt resource value: 0x7f020071
+			public static int avd_show_password_1 = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public static int avd_show_password_2 = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public static int avd_show_password_3 = 2130837619;
 			
 			// aapt resource value: 0x7f020059
-			public static int design_password_eye = 2130837593;
+			public static int design_bottom_navigation_item_background = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public static int design_snackbar_background = 2130837594;
+			public static int design_fab_background = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public static int navigation_empty_icon = 2130837595;
+			public static int design_ic_visibility = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public static int notification_action_background = 2130837596;
+			public static int design_ic_visibility_off = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public static int notification_bg = 2130837597;
+			public static int design_password_eye = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public static int notification_bg_low = 2130837598;
+			public static int design_snackbar_background = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public static int notification_bg_low_normal = 2130837599;
+			public static int navigation_empty_icon = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public static int notification_bg_low_pressed = 2130837600;
+			public static int notification_action_background = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public static int notification_bg_normal = 2130837601;
+			public static int notification_bg = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public static int notification_bg_normal_pressed = 2130837602;
+			public static int notification_bg_low = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public static int notification_icon_background = 2130837603;
-			
-			// aapt resource value: 0x7f020068
-			public static int notification_template_icon_bg = 2130837608;
-			
-			// aapt resource value: 0x7f020069
-			public static int notification_template_icon_low_bg = 2130837609;
+			public static int notification_bg_low_normal = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public static int notification_tile_bg = 2130837604;
+			public static int notification_bg_low_pressed = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public static int notify_panel_notification_icon_bg = 2130837605;
+			public static int notification_bg_normal = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public static int tooltip_frame_dark = 2130837606;
+			public static int notification_bg_normal_pressed = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public static int tooltip_frame_light = 2130837607;
+			public static int notification_icon_background = 2130837607;
+			
+			// aapt resource value: 0x7f02006c
+			public static int notification_template_icon_bg = 2130837612;
+			
+			// aapt resource value: 0x7f02006d
+			public static int notification_template_icon_low_bg = 2130837613;
+			
+			// aapt resource value: 0x7f020068
+			public static int notification_tile_bg = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public static int notify_panel_notification_icon_bg = 2130837609;
+			
+			// aapt resource value: 0x7f02006a
+			public static int tooltip_frame_dark = 2130837610;
+			
+			// aapt resource value: 0x7f02006b
+			public static int tooltip_frame_light = 2130837611;
 			
 			static Drawable()
 			{
@@ -2329,17 +2506,17 @@ namespace AppRopio.Payments.CloudPayments.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080034
-			public static int ALT = 2131230772;
-			
-			// aapt resource value: 0x7f080035
-			public static int CTRL = 2131230773;
-			
 			// aapt resource value: 0x7f080036
-			public static int FUNCTION = 2131230774;
+			public static int ALT = 2131230774;
 			
 			// aapt resource value: 0x7f080037
-			public static int META = 2131230775;
+			public static int CTRL = 2131230775;
+			
+			// aapt resource value: 0x7f080038
+			public static int FUNCTION = 2131230776;
+			
+			// aapt resource value: 0x7f080039
+			public static int META = 2131230777;
 			
 			// aapt resource value: 0x7f08001d
 			public static int MvvmCrossTagId = 2131230749;
@@ -2347,47 +2524,47 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f08001e
 			public static int MvxBindingTagUnique = 2131230750;
 			
-			// aapt resource value: 0x7f080038
-			public static int SHIFT = 2131230776;
+			// aapt resource value: 0x7f08003a
+			public static int SHIFT = 2131230778;
 			
-			// aapt resource value: 0x7f080039
-			public static int SYM = 2131230777;
+			// aapt resource value: 0x7f08003b
+			public static int SYM = 2131230779;
 			
-			// aapt resource value: 0x7f08009e
-			public static int action0 = 2131230878;
+			// aapt resource value: 0x7f0800a3
+			public static int action0 = 2131230883;
 			
-			// aapt resource value: 0x7f08007e
-			public static int action_bar = 2131230846;
+			// aapt resource value: 0x7f080080
+			public static int action_bar = 2131230848;
 			
 			// aapt resource value: 0x7f080001
 			public static int action_bar_activity_content = 2131230721;
 			
-			// aapt resource value: 0x7f08007d
-			public static int action_bar_container = 2131230845;
+			// aapt resource value: 0x7f08007f
+			public static int action_bar_container = 2131230847;
 			
-			// aapt resource value: 0x7f080079
-			public static int action_bar_root = 2131230841;
+			// aapt resource value: 0x7f08007b
+			public static int action_bar_root = 2131230843;
 			
 			// aapt resource value: 0x7f080002
 			public static int action_bar_spinner = 2131230722;
 			
-			// aapt resource value: 0x7f08005d
-			public static int action_bar_subtitle = 2131230813;
+			// aapt resource value: 0x7f08005f
+			public static int action_bar_subtitle = 2131230815;
 			
-			// aapt resource value: 0x7f08005c
-			public static int action_bar_title = 2131230812;
+			// aapt resource value: 0x7f08005e
+			public static int action_bar_title = 2131230814;
 			
-			// aapt resource value: 0x7f08009b
-			public static int action_container = 2131230875;
+			// aapt resource value: 0x7f0800a0
+			public static int action_container = 2131230880;
 			
-			// aapt resource value: 0x7f08007f
-			public static int action_context_bar = 2131230847;
+			// aapt resource value: 0x7f080081
+			public static int action_context_bar = 2131230849;
 			
-			// aapt resource value: 0x7f0800a2
-			public static int action_divider = 2131230882;
+			// aapt resource value: 0x7f0800a7
+			public static int action_divider = 2131230887;
 			
-			// aapt resource value: 0x7f08009c
-			public static int action_image = 2131230876;
+			// aapt resource value: 0x7f0800a1
+			public static int action_image = 2131230881;
 			
 			// aapt resource value: 0x7f080003
 			public static int action_menu_divider = 2131230723;
@@ -2395,158 +2572,164 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f080004
 			public static int action_menu_presenter = 2131230724;
 			
-			// aapt resource value: 0x7f08007b
-			public static int action_mode_bar = 2131230843;
-			
-			// aapt resource value: 0x7f08007a
-			public static int action_mode_bar_stub = 2131230842;
-			
-			// aapt resource value: 0x7f08005e
-			public static int action_mode_close_button = 2131230814;
-			
-			// aapt resource value: 0x7f08009d
-			public static int action_text = 2131230877;
-			
-			// aapt resource value: 0x7f0800ab
-			public static int actions = 2131230891;
-			
-			// aapt resource value: 0x7f08005f
-			public static int activity_chooser_view_content = 2131230815;
-			
-			// aapt resource value: 0x7f080029
-			public static int add = 2131230761;
-			
-			// aapt resource value: 0x7f080072
-			public static int alertTitle = 2131230834;
-			
-			// aapt resource value: 0x7f080054
-			public static int all = 2131230804;
-			
-			// aapt resource value: 0x7f08003a
-			public static int always = 2131230778;
-			
-			// aapt resource value: 0x7f080058
-			public static int async = 2131230808;
-			
-			// aapt resource value: 0x7f080046
-			public static int auto = 2131230790;
-			
-			// aapt resource value: 0x7f080031
-			public static int beginning = 2131230769;
-			
-			// aapt resource value: 0x7f080059
-			public static int blocking = 2131230809;
-			
-			// aapt resource value: 0x7f08003f
-			public static int bottom = 2131230783;
-			
-			// aapt resource value: 0x7f080065
-			public static int buttonPanel = 2131230821;
-			
-			// aapt resource value: 0x7f08009f
-			public static int cancel_action = 2131230879;
-			
-			// aapt resource value: 0x7f080047
-			public static int center = 2131230791;
-			
-			// aapt resource value: 0x7f080048
-			public static int center_horizontal = 2131230792;
-			
-			// aapt resource value: 0x7f080049
-			public static int center_vertical = 2131230793;
-			
-			// aapt resource value: 0x7f080075
-			public static int checkbox = 2131230837;
-			
-			// aapt resource value: 0x7f0800a7
-			public static int chronometer = 2131230887;
-			
-			// aapt resource value: 0x7f080050
-			public static int clip_horizontal = 2131230800;
-			
-			// aapt resource value: 0x7f080051
-			public static int clip_vertical = 2131230801;
-			
-			// aapt resource value: 0x7f08003b
-			public static int collapseActionView = 2131230779;
-			
-			// aapt resource value: 0x7f08008f
-			public static int container = 2131230863;
-			
-			// aapt resource value: 0x7f080068
-			public static int contentPanel = 2131230824;
-			
-			// aapt resource value: 0x7f080090
-			public static int coordinator = 2131230864;
-			
-			// aapt resource value: 0x7f08006f
-			public static int custom = 2131230831;
-			
-			// aapt resource value: 0x7f08006e
-			public static int customPanel = 2131230830;
+			// aapt resource value: 0x7f08007d
+			public static int action_mode_bar = 2131230845;
 			
 			// aapt resource value: 0x7f08007c
-			public static int decor_content_parent = 2131230844;
-			
-			// aapt resource value: 0x7f080062
-			public static int default_activity_button = 2131230818;
-			
-			// aapt resource value: 0x7f080092
-			public static int design_bottom_sheet = 2131230866;
-			
-			// aapt resource value: 0x7f080099
-			public static int design_menu_item_action_area = 2131230873;
-			
-			// aapt resource value: 0x7f080098
-			public static int design_menu_item_action_area_stub = 2131230872;
-			
-			// aapt resource value: 0x7f080097
-			public static int design_menu_item_text = 2131230871;
-			
-			// aapt resource value: 0x7f080096
-			public static int design_navigation_view = 2131230870;
-			
-			// aapt resource value: 0x7f080022
-			public static int disableHome = 2131230754;
-			
-			// aapt resource value: 0x7f080080
-			public static int edit_query = 2131230848;
-			
-			// aapt resource value: 0x7f080032
-			public static int end = 2131230770;
-			
-			// aapt resource value: 0x7f0800ad
-			public static int end_padder = 2131230893;
-			
-			// aapt resource value: 0x7f080041
-			public static int enterAlways = 2131230785;
-			
-			// aapt resource value: 0x7f080042
-			public static int enterAlwaysCollapsed = 2131230786;
-			
-			// aapt resource value: 0x7f080043
-			public static int exitUntilCollapsed = 2131230787;
+			public static int action_mode_bar_stub = 2131230844;
 			
 			// aapt resource value: 0x7f080060
-			public static int expand_activities_button = 2131230816;
+			public static int action_mode_close_button = 2131230816;
+			
+			// aapt resource value: 0x7f0800a2
+			public static int action_text = 2131230882;
+			
+			// aapt resource value: 0x7f0800b0
+			public static int actions = 2131230896;
+			
+			// aapt resource value: 0x7f080061
+			public static int activity_chooser_view_content = 2131230817;
+			
+			// aapt resource value: 0x7f08002b
+			public static int add = 2131230763;
 			
 			// aapt resource value: 0x7f080074
-			public static int expanded_menu = 2131230836;
-			
-			// aapt resource value: 0x7f080052
-			public static int fill = 2131230802;
-			
-			// aapt resource value: 0x7f080053
-			public static int fill_horizontal = 2131230803;
-			
-			// aapt resource value: 0x7f08004a
-			public static int fill_vertical = 2131230794;
+			public static int alertTitle = 2131230836;
 			
 			// aapt resource value: 0x7f080056
-			public static int @fixed = 2131230806;
+			public static int all = 2131230806;
+			
+			// aapt resource value: 0x7f08003c
+			public static int always = 2131230780;
+			
+			// aapt resource value: 0x7f080020
+			public static int app_status_bar_background = 2131230752;
+			
+			// aapt resource value: 0x7f08001f
+			public static int app_toolbar = 2131230751;
 			
 			// aapt resource value: 0x7f08005a
-			public static int forever = 2131230810;
+			public static int async = 2131230810;
+			
+			// aapt resource value: 0x7f080048
+			public static int auto = 2131230792;
+			
+			// aapt resource value: 0x7f080033
+			public static int beginning = 2131230771;
+			
+			// aapt resource value: 0x7f08005b
+			public static int blocking = 2131230811;
+			
+			// aapt resource value: 0x7f080041
+			public static int bottom = 2131230785;
+			
+			// aapt resource value: 0x7f080067
+			public static int buttonPanel = 2131230823;
+			
+			// aapt resource value: 0x7f0800a4
+			public static int cancel_action = 2131230884;
+			
+			// aapt resource value: 0x7f080049
+			public static int center = 2131230793;
+			
+			// aapt resource value: 0x7f08004a
+			public static int center_horizontal = 2131230794;
+			
+			// aapt resource value: 0x7f08004b
+			public static int center_vertical = 2131230795;
+			
+			// aapt resource value: 0x7f080077
+			public static int checkbox = 2131230839;
+			
+			// aapt resource value: 0x7f0800ac
+			public static int chronometer = 2131230892;
+			
+			// aapt resource value: 0x7f080052
+			public static int clip_horizontal = 2131230802;
+			
+			// aapt resource value: 0x7f080053
+			public static int clip_vertical = 2131230803;
+			
+			// aapt resource value: 0x7f08003d
+			public static int collapseActionView = 2131230781;
+			
+			// aapt resource value: 0x7f080094
+			public static int container = 2131230868;
+			
+			// aapt resource value: 0x7f08006a
+			public static int contentPanel = 2131230826;
+			
+			// aapt resource value: 0x7f080095
+			public static int coordinator = 2131230869;
+			
+			// aapt resource value: 0x7f080071
+			public static int custom = 2131230833;
+			
+			// aapt resource value: 0x7f080070
+			public static int customPanel = 2131230832;
+			
+			// aapt resource value: 0x7f08007e
+			public static int decor_content_parent = 2131230846;
+			
+			// aapt resource value: 0x7f080064
+			public static int default_activity_button = 2131230820;
+			
+			// aapt resource value: 0x7f080097
+			public static int design_bottom_sheet = 2131230871;
+			
+			// aapt resource value: 0x7f08009e
+			public static int design_menu_item_action_area = 2131230878;
+			
+			// aapt resource value: 0x7f08009d
+			public static int design_menu_item_action_area_stub = 2131230877;
+			
+			// aapt resource value: 0x7f08009c
+			public static int design_menu_item_text = 2131230876;
+			
+			// aapt resource value: 0x7f08009b
+			public static int design_navigation_view = 2131230875;
+			
+			// aapt resource value: 0x7f080024
+			public static int disableHome = 2131230756;
+			
+			// aapt resource value: 0x7f080082
+			public static int edit_query = 2131230850;
+			
+			// aapt resource value: 0x7f080034
+			public static int end = 2131230772;
+			
+			// aapt resource value: 0x7f0800b2
+			public static int end_padder = 2131230898;
+			
+			// aapt resource value: 0x7f080043
+			public static int enterAlways = 2131230787;
+			
+			// aapt resource value: 0x7f080044
+			public static int enterAlwaysCollapsed = 2131230788;
+			
+			// aapt resource value: 0x7f080045
+			public static int exitUntilCollapsed = 2131230789;
+			
+			// aapt resource value: 0x7f080062
+			public static int expand_activities_button = 2131230818;
+			
+			// aapt resource value: 0x7f080076
+			public static int expanded_menu = 2131230838;
+			
+			// aapt resource value: 0x7f080054
+			public static int fill = 2131230804;
+			
+			// aapt resource value: 0x7f080055
+			public static int fill_horizontal = 2131230805;
+			
+			// aapt resource value: 0x7f08004c
+			public static int fill_vertical = 2131230796;
+			
+			// aapt resource value: 0x7f080058
+			public static int @fixed = 2131230808;
+			
+			// aapt resource value: 0x7f08005c
+			public static int forever = 2131230812;
 			
 			// aapt resource value: 0x7f08000a
 			public static int ghost_view = 2131230730;
@@ -2554,35 +2737,35 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f080005
 			public static int home = 2131230725;
 			
-			// aapt resource value: 0x7f080023
-			public static int homeAsUp = 2131230755;
+			// aapt resource value: 0x7f080025
+			public static int homeAsUp = 2131230757;
 			
-			// aapt resource value: 0x7f080064
-			public static int icon = 2131230820;
+			// aapt resource value: 0x7f080066
+			public static int icon = 2131230822;
 			
-			// aapt resource value: 0x7f0800ac
-			public static int icon_group = 2131230892;
+			// aapt resource value: 0x7f0800b1
+			public static int icon_group = 2131230897;
 			
-			// aapt resource value: 0x7f08003c
-			public static int ifRoom = 2131230780;
+			// aapt resource value: 0x7f08003e
+			public static int ifRoom = 2131230782;
 			
-			// aapt resource value: 0x7f080061
-			public static int image = 2131230817;
+			// aapt resource value: 0x7f080063
+			public static int image = 2131230819;
 			
-			// aapt resource value: 0x7f0800a8
-			public static int info = 2131230888;
+			// aapt resource value: 0x7f0800ad
+			public static int info = 2131230893;
 			
-			// aapt resource value: 0x7f08005b
-			public static int italic = 2131230811;
+			// aapt resource value: 0x7f08005d
+			public static int italic = 2131230813;
 			
 			// aapt resource value: 0x7f080000
 			public static int item_touch_helper_previous_elevation = 2131230720;
 			
-			// aapt resource value: 0x7f08008e
-			public static int largeLabel = 2131230862;
+			// aapt resource value: 0x7f080093
+			public static int largeLabel = 2131230867;
 			
-			// aapt resource value: 0x7f08004b
-			public static int left = 2131230795;
+			// aapt resource value: 0x7f08004d
+			public static int left = 2131230797;
 			
 			// aapt resource value: 0x7f080017
 			public static int line1 = 2131230743;
@@ -2590,62 +2773,68 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f080018
 			public static int line3 = 2131230744;
 			
-			// aapt resource value: 0x7f08001f
-			public static int listMode = 2131230751;
+			// aapt resource value: 0x7f080021
+			public static int listMode = 2131230753;
 			
-			// aapt resource value: 0x7f080063
-			public static int list_item = 2131230819;
+			// aapt resource value: 0x7f080065
+			public static int list_item = 2131230821;
 			
-			// aapt resource value: 0x7f0800b0
-			public static int masked = 2131230896;
+			// aapt resource value: 0x7f0800b5
+			public static int masked = 2131230901;
 			
-			// aapt resource value: 0x7f0800a1
-			public static int media_actions = 2131230881;
+			// aapt resource value: 0x7f0800a6
+			public static int media_actions = 2131230886;
 			
-			// aapt resource value: 0x7f0800ae
-			public static int message = 2131230894;
+			// aapt resource value: 0x7f0800b3
+			public static int message = 2131230899;
 			
-			// aapt resource value: 0x7f080033
-			public static int middle = 2131230771;
+			// aapt resource value: 0x7f080035
+			public static int middle = 2131230773;
 			
-			// aapt resource value: 0x7f080055
-			public static int mini = 2131230805;
+			// aapt resource value: 0x7f080057
+			public static int mini = 2131230807;
 			
-			// aapt resource value: 0x7f08002a
-			public static int multiply = 2131230762;
+			// aapt resource value: 0x7f08002c
+			public static int multiply = 2131230764;
 			
-			// aapt resource value: 0x7f080095
-			public static int navigation_header_container = 2131230869;
+			// aapt resource value: 0x7f08009a
+			public static int navigation_header_container = 2131230874;
 			
-			// aapt resource value: 0x7f08003d
-			public static int never = 2131230781;
+			// aapt resource value: 0x7f08003f
+			public static int never = 2131230783;
 			
-			// aapt resource value: 0x7f080024
-			public static int none = 2131230756;
+			// aapt resource value: 0x7f080026
+			public static int none = 2131230758;
 			
-			// aapt resource value: 0x7f080020
-			public static int normal = 2131230752;
+			// aapt resource value: 0x7f080022
+			public static int normal = 2131230754;
 			
-			// aapt resource value: 0x7f0800aa
-			public static int notification_background = 2131230890;
+			// aapt resource value: 0x7f0800af
+			public static int notification_background = 2131230895;
 			
-			// aapt resource value: 0x7f0800a4
-			public static int notification_main_column = 2131230884;
+			// aapt resource value: 0x7f0800a9
+			public static int notification_main_column = 2131230889;
 			
-			// aapt resource value: 0x7f0800a3
-			public static int notification_main_column_container = 2131230883;
+			// aapt resource value: 0x7f0800a8
+			public static int notification_main_column_container = 2131230888;
 			
-			// aapt resource value: 0x7f08004e
-			public static int parallax = 2131230798;
+			// aapt resource value: 0x7f080050
+			public static int parallax = 2131230800;
 			
-			// aapt resource value: 0x7f080067
-			public static int parentPanel = 2131230823;
+			// aapt resource value: 0x7f080069
+			public static int parentPanel = 2131230825;
 			
 			// aapt resource value: 0x7f08000b
 			public static int parent_matrix = 2131230731;
 			
-			// aapt resource value: 0x7f08004f
-			public static int pin = 2131230799;
+			// aapt resource value: 0x7f080090
+			public static int payButton = 2131230864;
+			
+			// aapt resource value: 0x7f080051
+			public static int pin = 2131230801;
+			
+			// aapt resource value: 0x7f08008f
+			public static int progress_bar = 2131230863;
 			
 			// aapt resource value: 0x7f080006
 			public static int progress_circular = 2131230726;
@@ -2653,17 +2842,17 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f080007
 			public static int progress_horizontal = 2131230727;
 			
-			// aapt resource value: 0x7f080077
-			public static int radio = 2131230839;
+			// aapt resource value: 0x7f080079
+			public static int radio = 2131230841;
 			
-			// aapt resource value: 0x7f08004c
-			public static int right = 2131230796;
+			// aapt resource value: 0x7f08004e
+			public static int right = 2131230798;
 			
-			// aapt resource value: 0x7f0800a9
-			public static int right_icon = 2131230889;
+			// aapt resource value: 0x7f0800ae
+			public static int right_icon = 2131230894;
 			
-			// aapt resource value: 0x7f0800a5
-			public static int right_side = 2131230885;
+			// aapt resource value: 0x7f0800aa
+			public static int right_side = 2131230890;
 			
 			// aapt resource value: 0x7f08000c
 			public static int save_image_matrix = 2131230732;
@@ -2674,110 +2863,110 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f08000e
 			public static int save_scale_type = 2131230734;
 			
-			// aapt resource value: 0x7f08002b
-			public static int screen = 2131230763;
+			// aapt resource value: 0x7f08002d
+			public static int screen = 2131230765;
 			
-			// aapt resource value: 0x7f080044
-			public static int scroll = 2131230788;
+			// aapt resource value: 0x7f080046
+			public static int scroll = 2131230790;
 			
-			// aapt resource value: 0x7f08006d
-			public static int scrollIndicatorDown = 2131230829;
+			// aapt resource value: 0x7f08006f
+			public static int scrollIndicatorDown = 2131230831;
 			
-			// aapt resource value: 0x7f080069
-			public static int scrollIndicatorUp = 2131230825;
+			// aapt resource value: 0x7f08006b
+			public static int scrollIndicatorUp = 2131230827;
 			
-			// aapt resource value: 0x7f08006a
-			public static int scrollView = 2131230826;
+			// aapt resource value: 0x7f08006c
+			public static int scrollView = 2131230828;
 			
-			// aapt resource value: 0x7f080057
-			public static int scrollable = 2131230807;
-			
-			// aapt resource value: 0x7f080082
-			public static int search_badge = 2131230850;
-			
-			// aapt resource value: 0x7f080081
-			public static int search_bar = 2131230849;
-			
-			// aapt resource value: 0x7f080083
-			public static int search_button = 2131230851;
-			
-			// aapt resource value: 0x7f080088
-			public static int search_close_btn = 2131230856;
+			// aapt resource value: 0x7f080059
+			public static int scrollable = 2131230809;
 			
 			// aapt resource value: 0x7f080084
-			public static int search_edit_frame = 2131230852;
+			public static int search_badge = 2131230852;
 			
-			// aapt resource value: 0x7f08008a
-			public static int search_go_btn = 2131230858;
+			// aapt resource value: 0x7f080083
+			public static int search_bar = 2131230851;
 			
 			// aapt resource value: 0x7f080085
-			public static int search_mag_icon = 2131230853;
+			public static int search_button = 2131230853;
+			
+			// aapt resource value: 0x7f08008a
+			public static int search_close_btn = 2131230858;
 			
 			// aapt resource value: 0x7f080086
-			public static int search_plate = 2131230854;
-			
-			// aapt resource value: 0x7f080087
-			public static int search_src_text = 2131230855;
-			
-			// aapt resource value: 0x7f08008b
-			public static int search_voice_btn = 2131230859;
+			public static int search_edit_frame = 2131230854;
 			
 			// aapt resource value: 0x7f08008c
-			public static int select_dialog_listview = 2131230860;
+			public static int search_go_btn = 2131230860;
 			
-			// aapt resource value: 0x7f080076
-			public static int shortcut = 2131230838;
+			// aapt resource value: 0x7f080087
+			public static int search_mag_icon = 2131230855;
 			
-			// aapt resource value: 0x7f080025
-			public static int showCustom = 2131230757;
+			// aapt resource value: 0x7f080088
+			public static int search_plate = 2131230856;
 			
-			// aapt resource value: 0x7f080026
-			public static int showHome = 2131230758;
-			
-			// aapt resource value: 0x7f080027
-			public static int showTitle = 2131230759;
+			// aapt resource value: 0x7f080089
+			public static int search_src_text = 2131230857;
 			
 			// aapt resource value: 0x7f08008d
-			public static int smallLabel = 2131230861;
+			public static int search_voice_btn = 2131230861;
 			
-			// aapt resource value: 0x7f080094
-			public static int snackbar_action = 2131230868;
+			// aapt resource value: 0x7f08008e
+			public static int select_dialog_listview = 2131230862;
 			
-			// aapt resource value: 0x7f080093
-			public static int snackbar_text = 2131230867;
+			// aapt resource value: 0x7f080078
+			public static int shortcut = 2131230840;
 			
-			// aapt resource value: 0x7f080045
-			public static int snap = 2131230789;
+			// aapt resource value: 0x7f080027
+			public static int showCustom = 2131230759;
 			
-			// aapt resource value: 0x7f080066
-			public static int spacer = 2131230822;
+			// aapt resource value: 0x7f080028
+			public static int showHome = 2131230760;
+			
+			// aapt resource value: 0x7f080029
+			public static int showTitle = 2131230761;
+			
+			// aapt resource value: 0x7f080092
+			public static int smallLabel = 2131230866;
+			
+			// aapt resource value: 0x7f080099
+			public static int snackbar_action = 2131230873;
+			
+			// aapt resource value: 0x7f080098
+			public static int snackbar_text = 2131230872;
+			
+			// aapt resource value: 0x7f080047
+			public static int snap = 2131230791;
+			
+			// aapt resource value: 0x7f080068
+			public static int spacer = 2131230824;
 			
 			// aapt resource value: 0x7f080008
 			public static int split_action_bar = 2131230728;
 			
-			// aapt resource value: 0x7f08002c
-			public static int src_atop = 2131230764;
-			
-			// aapt resource value: 0x7f08002d
-			public static int src_in = 2131230765;
-			
 			// aapt resource value: 0x7f08002e
-			public static int src_over = 2131230766;
+			public static int src_atop = 2131230766;
 			
-			// aapt resource value: 0x7f08004d
-			public static int start = 2131230797;
+			// aapt resource value: 0x7f08002f
+			public static int src_in = 2131230767;
 			
-			// aapt resource value: 0x7f0800a0
-			public static int status_bar_latest_event_content = 2131230880;
+			// aapt resource value: 0x7f080030
+			public static int src_over = 2131230768;
 			
-			// aapt resource value: 0x7f080078
-			public static int submenuarrow = 2131230840;
+			// aapt resource value: 0x7f08004f
+			public static int start = 2131230799;
 			
-			// aapt resource value: 0x7f080089
-			public static int submit_area = 2131230857;
+			// aapt resource value: 0x7f0800a5
+			public static int status_bar_latest_event_content = 2131230885;
 			
-			// aapt resource value: 0x7f080021
-			public static int tabMode = 2131230753;
+			// aapt resource value: 0x7f08007a
+			public static int submenuarrow = 2131230842;
+			
+			// aapt resource value: 0x7f08008b
+			public static int submit_area = 2131230859;
+			
+			// aapt resource value: 0x7f080023
+			public static int tabMode = 2131230755;
 			
 			// aapt resource value: 0x7f080019
 			public static int tag_transition_group = 2131230745;
@@ -2788,14 +2977,14 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f08001b
 			public static int text2 = 2131230747;
 			
-			// aapt resource value: 0x7f08006c
-			public static int textSpacerNoButtons = 2131230828;
+			// aapt resource value: 0x7f08006e
+			public static int textSpacerNoButtons = 2131230830;
 			
-			// aapt resource value: 0x7f08006b
-			public static int textSpacerNoTitle = 2131230827;
+			// aapt resource value: 0x7f08006d
+			public static int textSpacerNoTitle = 2131230829;
 			
-			// aapt resource value: 0x7f08009a
-			public static int text_input_password_toggle = 2131230874;
+			// aapt resource value: 0x7f08009f
+			public static int text_input_password_toggle = 2131230879;
 			
 			// aapt resource value: 0x7f080014
 			public static int textinput_counter = 2131230740;
@@ -2803,26 +2992,26 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f080015
 			public static int textinput_error = 2131230741;
 			
-			// aapt resource value: 0x7f0800a6
-			public static int time = 2131230886;
+			// aapt resource value: 0x7f0800ab
+			public static int time = 2131230891;
 			
 			// aapt resource value: 0x7f08001c
 			public static int title = 2131230748;
 			
+			// aapt resource value: 0x7f080075
+			public static int titleDividerNoCustom = 2131230837;
+			
 			// aapt resource value: 0x7f080073
-			public static int titleDividerNoCustom = 2131230835;
+			public static int title_template = 2131230835;
 			
-			// aapt resource value: 0x7f080071
-			public static int title_template = 2131230833;
+			// aapt resource value: 0x7f080042
+			public static int top = 2131230786;
 			
-			// aapt resource value: 0x7f080040
-			public static int top = 2131230784;
+			// aapt resource value: 0x7f080072
+			public static int topPanel = 2131230834;
 			
-			// aapt resource value: 0x7f080070
-			public static int topPanel = 2131230832;
-			
-			// aapt resource value: 0x7f080091
-			public static int touch_outside = 2131230865;
+			// aapt resource value: 0x7f080096
+			public static int touch_outside = 2131230870;
 			
 			// aapt resource value: 0x7f08000f
 			public static int transition_current_scene = 2131230735;
@@ -2839,26 +3028,29 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f080013
 			public static int transition_transform = 2131230739;
 			
-			// aapt resource value: 0x7f08002f
-			public static int uniform = 2131230767;
+			// aapt resource value: 0x7f080031
+			public static int uniform = 2131230769;
 			
 			// aapt resource value: 0x7f080009
 			public static int up = 2131230729;
 			
-			// aapt resource value: 0x7f080028
-			public static int useLogo = 2131230760;
+			// aapt resource value: 0x7f08002a
+			public static int useLogo = 2131230762;
 			
 			// aapt resource value: 0x7f080016
 			public static int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800af
-			public static int visible = 2131230895;
+			// aapt resource value: 0x7f0800b4
+			public static int visible = 2131230900;
 			
-			// aapt resource value: 0x7f08003e
-			public static int withText = 2131230782;
+			// aapt resource value: 0x7f080091
+			public static int webView = 2131230865;
 			
-			// aapt resource value: 0x7f080030
-			public static int wrap_content = 2131230768;
+			// aapt resource value: 0x7f080040
+			public static int withText = 2131230784;
+			
+			// aapt resource value: 0x7f080032
+			public static int wrap_content = 2131230770;
 			
 			static Id()
 			{
@@ -2881,6 +3073,18 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			
 			// aapt resource value: 0x7f0d0005
 			public static int app_bar_elevation_anim_duration = 2131558405;
+			
+			// aapt resource value: 0x7f0d000d
+			public static int app_payments_card_holder_length = 2131558413;
+			
+			// aapt resource value: 0x7f0d000a
+			public static int app_payments_card_number_length = 2131558410;
+			
+			// aapt resource value: 0x7f0d000c
+			public static int app_payments_cvv_length = 2131558412;
+			
+			// aapt resource value: 0x7f0d000b
+			public static int app_payments_date_length = 2131558411;
 			
 			// aapt resource value: 0x7f0d0006
 			public static int bottom_sheet_slide_duration = 2131558406;
@@ -2995,106 +3199,112 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			public static int abc_select_dialog_material = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public static int design_bottom_navigation_item = 2130903066;
+			public static int app_base_loading = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public static int design_bottom_sheet_dialog = 2130903067;
+			public static int app_payment_card = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public static int design_layout_snackbar = 2130903068;
+			public static int design_bottom_navigation_item = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public static int design_layout_snackbar_include = 2130903069;
+			public static int design_bottom_sheet_dialog = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public static int design_layout_tab_icon = 2130903070;
+			public static int design_layout_snackbar = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public static int design_layout_tab_text = 2130903071;
+			public static int design_layout_snackbar_include = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public static int design_menu_item_action_area = 2130903072;
+			public static int design_layout_tab_icon = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public static int design_navigation_item = 2130903073;
+			public static int design_layout_tab_text = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public static int design_navigation_item_header = 2130903074;
+			public static int design_menu_item_action_area = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public static int design_navigation_item_separator = 2130903075;
+			public static int design_navigation_item = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public static int design_navigation_item_subheader = 2130903076;
+			public static int design_navigation_item_header = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public static int design_navigation_menu = 2130903077;
+			public static int design_navigation_item_separator = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public static int design_navigation_menu_item = 2130903078;
+			public static int design_navigation_item_subheader = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public static int design_text_input_password_icon = 2130903079;
+			public static int design_navigation_menu = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public static int notification_action = 2130903080;
+			public static int design_navigation_menu_item = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public static int notification_action_tombstone = 2130903081;
+			public static int design_text_input_password_icon = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public static int notification_media_action = 2130903082;
+			public static int notification_action = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public static int notification_media_cancel_action = 2130903083;
+			public static int notification_action_tombstone = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public static int notification_template_big_media = 2130903084;
+			public static int notification_media_action = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public static int notification_template_big_media_custom = 2130903085;
+			public static int notification_media_cancel_action = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public static int notification_template_big_media_narrow = 2130903086;
+			public static int notification_template_big_media = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public static int notification_template_big_media_narrow_custom = 2130903087;
+			public static int notification_template_big_media_custom = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public static int notification_template_custom_big = 2130903088;
+			public static int notification_template_big_media_narrow = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public static int notification_template_icon_group = 2130903089;
+			public static int notification_template_big_media_narrow_custom = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public static int notification_template_lines_media = 2130903090;
+			public static int notification_template_custom_big = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public static int notification_template_media = 2130903091;
+			public static int notification_template_icon_group = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public static int notification_template_media_custom = 2130903092;
+			public static int notification_template_lines_media = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public static int notification_template_part_chronometer = 2130903093;
+			public static int notification_template_media = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public static int notification_template_part_time = 2130903094;
+			public static int notification_template_media_custom = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public static int select_dialog_item_material = 2130903095;
+			public static int notification_template_part_chronometer = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public static int select_dialog_multichoice_material = 2130903096;
+			public static int notification_template_part_time = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public static int select_dialog_singlechoice_material = 2130903097;
+			public static int select_dialog_item_material = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public static int support_simple_spinner_dropdown_item = 2130903098;
+			public static int select_dialog_multichoice_material = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public static int tooltip = 2130903099;
+			public static int select_dialog_singlechoice_material = 2130903099;
+			
+			// aapt resource value: 0x7f03003c
+			public static int support_simple_spinner_dropdown_item = 2130903100;
+			
+			// aapt resource value: 0x7f03003d
+			public static int tooltip = 2130903101;
 			
 			static Layout()
 			{
@@ -3265,6 +3475,90 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			
 			// aapt resource value: 0x7f0a015f
 			public static int Animation_Design_BottomSheetDialog = 2131362143;
+			
+			// aapt resource value: 0x7f0a0188
+			public static int AppRopio_TextAppearance_Body1 = 2131362184;
+			
+			// aapt resource value: 0x7f0a018b
+			public static int AppRopio_TextAppearance_Body1_Bold = 2131362187;
+			
+			// aapt resource value: 0x7f0a018e
+			public static int AppRopio_TextAppearance_Body1_Medium = 2131362190;
+			
+			// aapt resource value: 0x7f0a0189
+			public static int AppRopio_TextAppearance_Body2 = 2131362185;
+			
+			// aapt resource value: 0x7f0a018c
+			public static int AppRopio_TextAppearance_Body2_Bold = 2131362188;
+			
+			// aapt resource value: 0x7f0a018f
+			public static int AppRopio_TextAppearance_Body2_Medium = 2131362191;
+			
+			// aapt resource value: 0x7f0a018a
+			public static int AppRopio_TextAppearance_Body3 = 2131362186;
+			
+			// aapt resource value: 0x7f0a018d
+			public static int AppRopio_TextAppearance_Body3_Bold = 2131362189;
+			
+			// aapt resource value: 0x7f0a0190
+			public static int AppRopio_TextAppearance_Body3_Medium = 2131362192;
+			
+			// aapt resource value: 0x7f0a0183
+			public static int AppRopio_TextAppearance_Header1 = 2131362179;
+			
+			// aapt resource value: 0x7f0a0184
+			public static int AppRopio_TextAppearance_Header2 = 2131362180;
+			
+			// aapt resource value: 0x7f0a0185
+			public static int AppRopio_TextAppearance_Header3 = 2131362181;
+			
+			// aapt resource value: 0x7f0a0186
+			public static int AppRopio_TextAppearance_Header4 = 2131362182;
+			
+			// aapt resource value: 0x7f0a0187
+			public static int AppRopio_TextAppearance_Header5 = 2131362183;
+			
+			// aapt resource value: 0x7f0a0191
+			public static int AppRopio_TextAppearance_Input = 2131362193;
+			
+			// aapt resource value: 0x7f0a0196
+			public static int AppRopioTheme_Control_Button = 2131362198;
+			
+			// aapt resource value: 0x7f0a0197
+			public static int AppRopioTheme_Control_Button_Base = 2131362199;
+			
+			// aapt resource value: 0x7f0a0198
+			public static int AppRopioTheme_Control_Button_Image = 2131362200;
+			
+			// aapt resource value: 0x7f0a0199
+			public static int AppRopioTheme_Control_Button_Text = 2131362201;
+			
+			// aapt resource value: 0x7f0a019e
+			public static int AppRopioTheme_Control_SearchEditText = 2131362206;
+			
+			// aapt resource value: 0x7f0a019a
+			public static int AppRopioTheme_Control_Separator = 2131362202;
+			
+			// aapt resource value: 0x7f0a0192
+			public static int AppRopioTheme_Control_StatusBar = 2131362194;
+			
+			// aapt resource value: 0x7f0a019b
+			public static int AppRopioTheme_Control_TextInputLayout = 2131362203;
+			
+			// aapt resource value: 0x7f0a019d
+			public static int AppRopioTheme_Control_TextInputLayout_ErrorTextAppearance = 2131362205;
+			
+			// aapt resource value: 0x7f0a019c
+			public static int AppRopioTheme_Control_TextInputLayout_HintTextAppearance = 2131362204;
+			
+			// aapt resource value: 0x7f0a0193
+			public static int AppRopioTheme_Control_Toolbar = 2131362195;
+			
+			// aapt resource value: 0x7f0a0195
+			public static int AppRopioTheme_Control_Toolbar_Title = 2131362197;
+			
+			// aapt resource value: 0x7f0a0194
+			public static int AppRopioTheme_Control_ToolbarTheme = 2131362196;
 			
 			// aapt resource value: 0x7f0a009a
 			public static int Base_AlertDialog_AppCompat = 2131361946;
@@ -4400,6 +4694,15 @@ namespace AppRopio.Payments.CloudPayments.Droid
 			// aapt resource value: 0x7f0a0178
 			public static int Widget_Design_TextInputLayout = 2131362168;
 			
+			// aapt resource value: 0x7f0a0182
+			public static int app_payments_inputLayout = 2131362178;
+			
+			// aapt resource value: 0x7f0a0181
+			public static int app_payments_inputLayout_errorTextAppearance = 2131362177;
+			
+			// aapt resource value: 0x7f0a0180
+			public static int app_payments_inputLayout_hintTextAppearance = 2131362176;
+			
 			static Style()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -4428,6 +4731,56 @@ namespace AppRopio.Payments.CloudPayments.Droid
 		
 		public partial class Styleable
 		{
+			
+			public static int[] ARAppCompatSpinner = new int[] {
+					2130772317,
+					2130772318};
+			
+			// aapt resource value: 1
+			public static int ARAppCompatSpinner_MvxDropDownItemTemplate = 1;
+			
+			// aapt resource value: 0
+			public static int ARAppCompatSpinner_MvxItemTemplate = 0;
+			
+			public static int[] ARAspectLayout = new int[] {
+					2130772352};
+			
+			// aapt resource value: 0
+			public static int ARAspectLayout_aspect = 0;
+			
+			public static int[] ARImageView = new int[] {
+					2130772348,
+					2130772349,
+					2130772350};
+			
+			// aapt resource value: 1
+			public static int ARImageView_circle = 1;
+			
+			// aapt resource value: 0
+			public static int ARImageView_downscale = 0;
+			
+			// aapt resource value: 2
+			public static int ARImageView_placeholder = 2;
+			
+			public static int[] ARLinearLayout = new int[] {
+					2130772317,
+					2130772351};
+			
+			// aapt resource value: 0
+			public static int ARLinearLayout_MvxItemTemplate = 0;
+			
+			// aapt resource value: 1
+			public static int ARLinearLayout_MvxTemplateSelector = 1;
+			
+			public static int[] ARListView = new int[] {
+					2130772346,
+					2130772347};
+			
+			// aapt resource value: 1
+			public static int ARListView_MvxFooterTemplate = 1;
+			
+			// aapt resource value: 0
+			public static int ARListView_MvxHeaderTemplate = 0;
 			
 			public static int[] ActionBar = new int[] {
 					2130771978,

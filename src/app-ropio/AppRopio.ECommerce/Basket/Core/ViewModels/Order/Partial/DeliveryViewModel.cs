@@ -336,7 +336,9 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
                     delivery.IsSelected = false;
             });
 
-            //var fdfdf = BasketVmService.LoadedBasket;
+            selectedItem = Items.FirstOrDefault(x => x is IDeliveryTypeItemVM delivery && delivery.Id.Equals(message.DeliveryId)) as IDeliveryTypeItemVM;
+            selectedItem.IsSelected = true;
+
             int bestPriceCounter = 0;
             BasketVmService.LoadedBasket.Items.ForEach(item =>
             {
@@ -349,13 +351,12 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
                     DiscountInBasket = true;
             });
 
-
             if (BestPriceInBasket && bestPriceCounter == Items?.Count)
-                goto selItem;
+                goto selTime;
             else if (BestPriceInBasket && DiscountInBasket && bestPriceCounter != BasketVmService.LoadedBasket.Items?.Count)
                 await UserDialogs.Alert("Скидки применены");
             else if (selectedItem?.Type == DeliveryType.DeliveryPoint &&
-                     DiscountInBasket&&
+                     DiscountInBasket &&
                      Amount >= 499 &&
                      (DeliveryVmService.SelectedDeliveryPointId == 29177 || DeliveryVmService.SelectedDeliveryPointId == 29507))
                 await UserDialogs.Alert("Скидка на самовывоз со склада применена");
@@ -364,10 +365,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             else if (Amount >= 499 && DiscountInBasket)
                 await UserDialogs.Alert("Скидка за заказ от 499 руб. применена");
 
-            selItem:
-            selectedItem = Items.FirstOrDefault(x => x is IDeliveryTypeItemVM delivery && delivery.Id.Equals(message.DeliveryId)) as IDeliveryTypeItemVM;
-            selectedItem.IsSelected = true;
-
+            selTime:
             SelectedDeliveryTime = null;
             IsShowDeliveryTimePicker = selectedItem.IsDeliveryTimeRequired;
 
