@@ -37,6 +37,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
         private MvxSubscriptionToken _paymentSelectedToken;
         private IDeliveryTypeItemVM selectedItem;
         private IDeliveryService iDeliveryService;
+        private bool BestPriceInBasket, DiscountInBasket;
         #endregion
 
         #region Commands
@@ -323,7 +324,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
 
         #endregion
 
-        protected virtual void OnDeliveryConfirmed(DeliveryConfirmedMessage message)
+        protected virtual async void OnDeliveryConfirmed(DeliveryConfirmedMessage message)
         {
             RecalcAmount();
             DeliveryPrice = message.DeliveryPrice;
@@ -335,6 +336,35 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
                     delivery.IsSelected = false;
             });
 
+            //var fdfdf = BasketVmService.LoadedBasket;
+            int bestPriceCounter = 0;
+            BasketVmService.LoadedBasket.Items.ForEach(item =>
+            {
+                if (item.Badges[0].Name.Contains("Лучшая цена"))
+                {
+                    BestPriceInBasket = true;
+                    bestPriceCounter++;
+                }
+                if (item.Badges[0].Name.Contains("Скидка"))
+                    DiscountInBasket = true;
+            });
+
+
+            if (BestPriceInBasket && bestPriceCounter == Items?.Count)
+                goto selItem;
+            else if (BestPriceInBasket && DiscountInBasket && bestPriceCounter != BasketVmService.LoadedBasket.Items?.Count)
+                await UserDialogs.Alert("Скидки применены");
+            else if (selectedItem?.Type == DeliveryType.DeliveryPoint &&
+                     DiscountInBasket&&
+                     Amount >= 499 &&
+                     (DeliveryVmService.SelectedDeliveryPointId == 29177 || DeliveryVmService.SelectedDeliveryPointId == 29507))
+                await UserDialogs.Alert("Скидка на самовывоз со склада применена");
+            else if (selectedItem?.Type == DeliveryType.DeliveryPoint && DiscountInBasket && Amount >= 499)
+                await UserDialogs.Alert("Скидка за самовывоз применена");
+            else if (Amount >= 499 && DiscountInBasket)
+                await UserDialogs.Alert("Скидка за заказ от 499 руб. применена");
+
+            selItem:
             selectedItem = Items.FirstOrDefault(x => x is IDeliveryTypeItemVM delivery && delivery.Id.Equals(message.DeliveryId)) as IDeliveryTypeItemVM;
             selectedItem.IsSelected = true;
 
@@ -402,23 +432,11 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             //amount calculate on server side
             try
             {
-                var amount = await BasketVmService.LoadBasketSummaryAmount() + (DeliveryPrice ?? 0);
+                //decimal amount = await BasketVmService.LoadBasketSummaryAmount() + (DeliveryPrice ?? 0);
 
-                //selectedItem
-                //DeliveryVmService.SelectedDeliveryPointId = 60109;
-                //iDeliveryService.SelectedDeliveryPointId
-                //var dffd = selectedItem.Name;
-                // Discount should work from 499 rubles
-                //await UserDialogs.Alert(DeliveryVmService.SelectedDeliveryPointId.ToString());
-                if (selectedItem?.Type == DeliveryType.DeliveryPoint &&
-                     amount >= 499 &&
-                     (DeliveryVmService.SelectedDeliveryPointId == 29177 || DeliveryVmService.SelectedDeliveryPointId == 29507))
-                            await UserDialogs.Alert("Скидка на самовывоз со склада применена");
-                else if(selectedItem?.Type == DeliveryType.DeliveryPoint && amount >= 499)
-                    await UserDialogs.Alert("Скидка на заказ от 499р применена");
                 InvokeOnMainThread(() =>
                 {
-                    Amount = amount;
+                    Amount = Amount;//amount
                     //AmountLoading = false;
                     NextCommand.RaiseCanExecuteChanged();
                 });
@@ -429,7 +447,6 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             {
                 //nothing
             }
-
         }
 
 

@@ -240,7 +240,10 @@ namespace AppRopio.ECommerce.Products.Core.ViewModels.ProductCard
                 var _newItems = newItems as ObservableCollection<IProductBasicItemVM>;
                 var discountObject = _newItems[1] as IShortInfoProductsPciVm;
                 DiscountValueFromBadgeObject.Name = discountObject.Badges[0].Name;
-                DiscountValueFromBadgeObject.Text = discountObject.Badges[0].Name + ", подробности при оформлении заказа";
+                if (discountObject.Badges[0].Name.Contains("Скидка"))
+                    DiscountValueFromBadgeObject.Text = discountObject.Badges[0].Name + ", подробности при оформлении заказа";
+                else if (discountObject.Badges[0].Name.Contains("Лучшая цена"))
+                    DiscountValueFromBadgeObject.Text = discountObject.Badges[0].Name + ", скидки на товар не предоставляются";
                 #endregion Discount value copy from badge
 
                 ProductAvailable = true;

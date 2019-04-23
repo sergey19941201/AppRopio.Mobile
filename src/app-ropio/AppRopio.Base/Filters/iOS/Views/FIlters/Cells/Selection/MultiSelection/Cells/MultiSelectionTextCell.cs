@@ -45,9 +45,10 @@ namespace AppRopio.Base.Filters.iOS.Views.FIlters.Cells.Selection.MultiSelection
         protected virtual void InitializeControls()
         {
             SetupName(_name);
+            SetupCrossImageView(_crossImageView);
             SetupSelectedView(_selectedView);
 
-            _crossImageView.SetupStyle(ThemeConfig.Filters.FiltersCell.MultiSelection.MultiSelectionCell.Image);
+            //_crossImageView.SetupStyle(ThemeConfig.Filters.FiltersCell.MultiSelection.MultiSelectionCell.Image);
         }
 
         protected virtual void SetupName(UILabel name)
@@ -55,6 +56,12 @@ namespace AppRopio.Base.Filters.iOS.Views.FIlters.Cells.Selection.MultiSelection
             name.SetupStyle(ThemeConfig.Filters.FiltersCell.MultiSelection.MultiSelectionCell.Value);
             name.Alpha = 0.5f;
         }
+
+        protected virtual void SetupCrossImageView(UIImageView imageView)
+        {
+            imageView.Image = ImageCache.GetImage("Images/Basket/close.png");
+        }
+
 
         protected virtual void SetupSelectedView(UIView selectedView)
         {

@@ -1,15 +1,16 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio to store outlets and
-// actions made in the UI designer. If it is removed, they will be lost.
-// Manual changes to this file may not be handled correctly.
+// This file has been generated automatically by Visual Studio from the outlets and
+// actions declared in your storyboard file.
+// Manual changes to this file will not be maintained.
 //
 using Foundation;
+using System;
 using System.CodeDom.Compiler;
 
 namespace AppRopio.Base.Filters.iOS.Views.Filters.Selection
 {
-    [Register("SelectionViewController")]
+    [Register ("SelectionViewController")]
     partial class SelectionViewController
     {
         [Outlet]
@@ -21,23 +22,15 @@ namespace AppRopio.Base.Filters.iOS.Views.Filters.Selection
         [Outlet]
         UIKit.UITableView _tableView { get; set; }
 
-        void ReleaseDesignerOutlets()
+        void ReleaseDesignerOutlets ()
         {
-            if (_applyBtn != null)
-            {
-                _applyBtn.Dispose();
+            if (_applyBtn != null) {
+                _applyBtn.Dispose ();
                 _applyBtn = null;
             }
 
-            if (_searchBar != null)
-            {
-                _searchBar.Dispose();
-                _searchBar = null;
-            }
-
-            if (_tableView != null)
-            {
-                _tableView.Dispose();
+            if (_tableView != null) {
+                _tableView.Dispose ();
                 _tableView = null;
             }
         }
