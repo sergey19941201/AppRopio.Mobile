@@ -365,6 +365,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             else if (Amount >= 499 && DiscountInBasket)
                 await UserDialogs.Alert("Скидка за заказ от 499 руб. применена");
 
+
+
             selTime:
             SelectedDeliveryTime = null;
             IsShowDeliveryTimePicker = selectedItem.IsDeliveryTimeRequired;
@@ -431,7 +433,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Order.Partial
             try
             {
                 //decimal amount = await BasketVmService.LoadBasketSummaryAmount() + (DeliveryPrice ?? 0);
-
+                Amount = await BasketVmService.LoadBasketSummaryAmount() + (DeliveryPrice ?? 0);
                 InvokeOnMainThread(() =>
                 {
                     Amount = Amount;//amount
