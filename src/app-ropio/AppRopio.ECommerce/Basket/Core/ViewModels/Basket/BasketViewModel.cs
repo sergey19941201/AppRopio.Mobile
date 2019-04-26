@@ -11,6 +11,7 @@ using AppRopio.ECommerce.Basket.Core.Messages;
 using AppRopio.ECommerce.Basket.Core.Messages.Basket;
 using AppRopio.ECommerce.Basket.Core.Models.Bundle;
 using AppRopio.ECommerce.Basket.Core.Services;
+using AppRopio.ECommerce.Basket.API.Services;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Items;
 using AppRopio.ECommerce.Basket.Core.ViewModels.Basket.Services;
 using AppRopio.ECommerce.Loyalty.Abstractions;
@@ -163,6 +164,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
 
         protected IBasketVmService VmService { get { return Mvx.Resolve<IBasketVmService>(); } }
         protected IBasketNavigationVmService NavigationVmService { get { return Mvx.Resolve<IBasketNavigationVmService>(); } }
+        protected IDeliveryService DeliveryService => Mvx.Resolve<IDeliveryService>();
 
         #endregion
 
@@ -229,7 +231,7 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
         #region Protected
 
         protected async Task LoadContent()
-        {
+            {
             CanGoNext = false;
 
             Loading = true;
@@ -239,6 +241,8 @@ namespace AppRopio.ECommerce.Basket.Core.ViewModels.Basket
             VersionId = VmService.LoadedBasket?.VersionId;
 
             Message = VmService.LoadedBasket?.Message;
+
+            await DeliveryService.ConfirmDeliveryPoint(null, null);
 
             Items = await VmService.LoadItemsIfNeeded(VersionId);
 
