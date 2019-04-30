@@ -83,7 +83,7 @@
                 android:layout_marginLeft="@dimen/app_products_catalog_item_horizontalMargin"
                 android:layout_marginRight="@dimen/app_products_catalog_item_horizontalMargin"
                 android:visibility="gone"
-                app:MvxBind="Text Format('{0} {1}', Resx('Catalog_PriceTo', 'Products'), PriceUnit(MaxPrice, UnitName))" />
+                app:MvxBind="Text Format('{0} {1}', 'to', PriceUnit(MaxPrice, UnitName))" />
             <FrameLayout
                 android:id="@+id/app_products_catalogCard_basketLayout"
                 android:layout_width="match_parent"

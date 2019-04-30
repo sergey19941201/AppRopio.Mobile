@@ -91,6 +91,18 @@ namespace AppRopio.Base.iOS.Views
             }
         }
 
+        // Forcibly set cancel button title independent of language
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
+            foreach (var view in SearchBar.Subviews[0])
+            {
+                var cancelBn = view as UIButton;
+                if (cancelBn != null)
+                    cancelBn.SetTitle("Cancel", UIControlState.Normal);
+            }
+        }
+
         public void RemoveBottomSeparator()
         {
             var subview = base.SearchBar?.Superview?.Subviews[0];
@@ -103,7 +115,7 @@ namespace AppRopio.Base.iOS.Views
                 {
                     _firstInit = false;
                     subview.Hidden = false;
-                    subview.Subviews.ForEach(x => 
+                    subview.Subviews.ForEach(x =>
                     {
                         x.Hidden = x is UIImageView;
                     });
